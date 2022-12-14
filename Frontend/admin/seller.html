@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Page</title>
+  <link rel="stylesheet" href="./style/output.css">
+<script src="./node_modules/tw-elements/dist/js/index.min.js"></script>
+
+</head>
+<body>
+
+    <main>
+      <div class="w-1/5 h-full shadow-md bg-white px-1 absolute top-0 border border-pink-400">
+        <div class="pt-4 pb-2 px-6">
+          <a href="#!">
+            <div class="flex items-center">
+              <div class="shrink-0">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+              </div>
+              <div class="grow ml-3">
+                <p id="seller" class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <ul class="relative">
+         
+          <li class="relative">
+            <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="Addproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add Products</a>
+          </li>
+          <li class="relative">
+            <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="manageproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage Products</a>
+          </li>
+        </ul>
+        <ul class="absolute bottom-1">
+          <li class="">
+            <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Logout</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border p-2 pl-6 w-4/5 float-right">
+        <div class="border shadow-md shadow-slate-300 h-36 m-4 rounded-xl grid grid-cols-4 gap-6 p-5">
+          <div class="bg-red-400 rounded-xl shadow-lg shadow-red-300 flex justify-center items-center flex-col">
+            <h1 class="text-white text-center text-3xl ">443</h1>
+            <h1 class="text-white text-center text-xl">Total Products</h1>
+          </div>
+          <div class="bg-orange-400 rounded-xl shadow-lg shadow-orange-300 flex justify-center items-center flex-col">
+            <h1 class="text-white text-center text-3xl ">143</h1>
+            <h1 class="text-white text-center text-xl">Pending Orders</h1>
+          </div>
+          <div class="bg-lime-400 rounded-xl shadow-lg shadow-lime-300 flex justify-center items-center flex-col">
+            <h1 class="text-white text-center text-3xl ">73</h1>
+            <h1 class="text-white text-center text-xl">Products Shipped</h1>
+          </div>
+          <div class="bg-green-400 rounded-xl shadow-lg shadow-green-300 flex justify-center items-center flex-col">
+            <h1 class="text-white text-center text-3xl ">1443</h1>
+            <h1 class="text-white text-center text-xl">Products Deliverd</h1>
+          </div>
+        </div>
+      </div>
+    </main>
+</body>
+<!-- <script src="./scripts/index.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script> -->
+</html>

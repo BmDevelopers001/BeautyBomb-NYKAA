@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="./style/output.css">
+</head>
+<body>
+    <main>
+        <div class="w-1/5 h-screen shadow-md bg-white px-1 fixed top-0">
+          <div class="pt-4 pb-2 px-6">
+            <a href="#!">
+              <div class="flex items-center">
+                <div class="shrink-0">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+                </div>
+                <div class="grow ml-3">
+                  <p id="seller" class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <ul class="relative">
+            <li class="relative">
+                <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="seller.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Home</a>
+              </li>
+            <li class="relative">
+              <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="Addproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add Products</a>
+            </li>
+            <li class="relative">
+              <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 bg-rose-300 hover:bg-pink-200 transition duration-300 ease-in-out" href="manageproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage Products</a>
+            </li>
+          </ul>
+          <ul class="absolute bottom-1">
+            <li class="">
+              <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Logout</button>
+            </li>
+          </ul>
+          <ul class="relative">
+            <li class="relative" id="sidenavEx1">
+              <a class="flex items-center text-sm font-bold de py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx1" aria-expanded="true" aria-controls="collapseSidenavEx1">
+                
+                <span>Filter BY: Price</span>
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 ml-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                </svg>
+              </a>
+              <ul class="relative accordion-collapse collapse" id="collapseSidenavEx1" aria-labelledby="sidenavEx1" data-bs-parent="#sidenavExample">
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-sm font-semibold" for="flexCheckDefault">
+                          Rs. 0 - Rs. 499
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-sm font-semibold" for="flexCheckDefault">
+                            Rs. 500 - Rs. 999
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-sm font-semibold" for="flexCheckDefault">
+                            Rs. 1000 - Rs. 1999
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-sm font-semibold" for="flexCheckDefault">
+                            Rs. 2000 - Rs. 3999
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-sm font-semibold" for="flexCheckDefault">
+                            Rs. 4000 - Above
+                        </label>
+                      </div>
+                </li>
+              </ul>
+            </li>
+            <li class="relative" id="sidenavEx2">
+              <a class="flex items-center text-sm font-bold py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx2" aria-expanded="false" aria-controls="collapseSidenavEx2">
+                
+                <span>Filter By: Category</span>
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 ml-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                </svg>
+              </a>
+              <ul class="relative accordion-collapse collapse" id="collapseSidenavEx2" aria-labelledby="sidenavEx2" data-bs-parent="#sidenavExample">
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Makeup
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Skin
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Hair
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Aplliances
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Bath & Body
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Natural
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Mom & Baby
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Health & Wellness
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Men
+                        </label>
+                      </div>
+                </li>
+                <li class="relative">
+                    <div class="form-check pl-10 pr-6 h-6">
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label inline-block text-gray-800 text-xs font-semibold" for="flexCheckDefault">
+                            Fragrance
+                        </label>
+                      </div>
+                </li>
+              </ul>
+            </li>
+            <li class="relative" id="sidenavEx3">
+              <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer" data-mdb-ripple="true" data-mdb-ripple-color="dark" data-bs-toggle="collapse" data-bs-target="#collapseSidenavEx3" aria-expanded="false" aria-controls="collapseSidenavEx3">
+                
+                <span>Click here 3</span>
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 ml-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                </svg>
+              </a>
+              <ul class="relative accordion-collapse collapse" id="collapseSidenavEx3" aria-labelledby="sidenavEx3" data-bs-parent="#sidenavExample">
+                <li class="relative">
+                  <a href="#!" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Link 5</a>
+                </li>
+                <li class="relative">
+                  <a href="#!" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">Link 6</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="manage" class="border p-2 pl-6 w-4/5 float-right flex gap-3 flex-wrap justify-center">
+
+        </div>
+      </main>
+</body>
+<script src="./node_modules/tw-elements/dist/js/index.min.js"></script>
+
+<script src="./scripts/manage.js"></script>
+</html>
