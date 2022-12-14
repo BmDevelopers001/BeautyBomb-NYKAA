@@ -245,3 +245,142 @@ function HideShoppingBag() {
     chat_ty.style.display = "block"
     arrowto_UP.style.display = "block"
 }
+let make_text = document.querySelector(".makeup-text")
+let skin_text = document.querySelector(".skin-text")
+let hair_text = document.querySelector(".hair-text")
+let appliances_text = document.querySelector(".appliances-text")
+let personalcare_text = document.querySelector(".personalcare-text")
+let natural_text = document.querySelector(".natural-text")
+let mombaby_text = document.querySelector(".mombaby-text")
+let healthwellness_text = document.querySelector(".healthwellness-text")
+let men_text = document.querySelector(".men-text")
+let fragrance_text = document.querySelector(".fragrance-text")
+let luxe_text = document.querySelector(".luxe-text")
+
+
+
+let makeup_box = document.querySelector(".Makeup-box")
+let skin_box = document.querySelector(".Skin-box")
+let hair_box = document.querySelector(".Hair-box")
+let appliances_box = document.querySelector(".Appliances-box")
+let personalcare_box = document.querySelector(".Personal-care-box")
+let natural_box = document.querySelector(".Natural-third-box")
+let mombaby_box = document.querySelector(".MOM-baby-box")
+let healthwell_box = document.querySelector(".Health-well-box")
+let men_box = document.querySelector(".MEN-box")
+let fragrance_box = document.querySelector(".Fragrance-box")
+let Luxe_box = document.querySelector(".LUXE-box")
+
+make_text.addEventListener("mouseover" , Showmakeup_Box)
+make_text.addEventListener("mouseleave" , HIDEmakeup_Box)
+
+function Showmakeup_Box() {
+    makeup_box.style.display = "grid"
+}
+
+function HIDEmakeup_Box() {
+    makeup_box.style.display = "none"
+}
+
+
+skin_text.addEventListener("mouseover" , Showskin_Box)
+skin_text.addEventListener("mouseleave" , HIDEskin_Box)
+
+function Showskin_Box() {
+    skin_box.style.display = "grid"
+}
+function HIDEskin_Box() {
+    skin_box.style.display = "none"
+}
+
+hair_text.addEventListener("mouseover" , Showhair_Box)
+hair_text.addEventListener("mouseleave" , HIDEhair_Box)
+
+function Showhair_Box() {
+    hair_box.style.display = "grid"
+}
+function HIDEhair_Box() {
+    hair_box.style.display = "none"
+}
+
+appliances_text.addEventListener("mouseover" , Showappliances_Box)
+appliances_text.addEventListener("mouseleave" , HIDEappliances_Box)
+
+function Showappliances_Box() {
+    appliances_box.style.display = "grid"
+}
+function HIDEappliances_Box() {
+    appliances_box.style.display = "none"
+}
+
+personalcare_text.addEventListener("mouseover" , Showpersonalcare_Box)
+personalcare_text.addEventListener("mouseleave" , HIDEpersonalcare_Box)
+
+function Showpersonalcare_Box() {
+    personalcare_box.style.display = "grid"
+}
+function HIDEpersonalcare_Box() {
+    personalcare_box.style.display = "none"
+}
+
+natural_text.addEventListener("mouseover" , Shownatural_box)
+natural_text.addEventListener("mouseleave" , HIDEnatural_box)
+
+function Shownatural_box() {
+    natural_box.style.display = "grid"
+}
+function HIDEnatural_box() {
+    natural_box.style.display = "none"
+}
+
+mombaby_text.addEventListener("mouseover" , Showmombaby_Box)
+mombaby_text.addEventListener("mouseleave" , HIDEmombaby_Box)
+
+function Showmombaby_Box() {
+    mombaby_box.style.display = "grid"
+}
+function HIDEmombaby_Box() {
+    mombaby_box.style.display = "none"
+}
+
+healthwellness_text.addEventListener("mouseover" , Showhealthwellness_Box)
+healthwellness_text.addEventListener("mouseleave" , HIDEhealthwellness_Box)
+
+function Showhealthwellness_Box() {
+    healthwell_box.style.display = "grid"
+}
+
+function HIDEhealthwellness_Box() {
+    healthwell_box.style.display = "none"
+}
+
+men_text.addEventListener("mouseover" , Showmen_Box)
+men_text.addEventListener("mouseleave" , HIDEmen_Box)
+
+function Showmen_Box() {
+    men_box.style.display = "grid"
+}
+function HIDEmen_Box() {
+    men_box.style.display = "none"
+}
+
+fragrance_text.addEventListener("mouseover", Showfragrance_Box)
+fragrance_text.addEventListener("mouseleave", HIDEfragrance_Box)
+
+function Showfragrance_Box() {
+    fragrance_box.style.display = "grid"
+}
+function HIDEfragrance_Box() {
+    fragrance_box.style.display = "none"
+}
+
+
+luxe_text.addEventListener("mouseover", Showluxe_Box)
+luxe_text.addEventListener("mouseleave", HIDEluxe_Box)
+
+function Showluxe_Box() {
+    Luxe_box.style.display = "grid"
+}
+function HIDEluxe_Box() {
+    Luxe_box.style.display = "none"
+}
