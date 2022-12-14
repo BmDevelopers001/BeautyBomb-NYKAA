@@ -23,11 +23,11 @@ function navbar() {
    
     <ul class="second-navlist">
       <li> <a href="index.html"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
-       <li><a href="/">CATEGORIES</li></a>
-       <li><a href="ProductNykaaCosmetics.html" class="show-brandbox">BRANDS</a></li>
-       <li><a href="/">LUXE</a></li>
-       <li><a href="/" class="show-nykaa_fashionBox">NYKAA FASHION</a></li>
-       <li><a href="/" class="Show-nykaa-beautybox">BEAUTY ADVICE</a></li>
+       <li><a href="./view/Product.html">CATEGORIES</li></a>
+       <li><a href="./view/Product.html" class="show-brandbox">BRANDS</a></li>
+       <li><a href="./view/Product.html">LUXE</a></li>
+       <li><a href="./view/Product.html" class="show-nykaa_fashionBox">NYKAA FASHION</a></li>
+       <li><a href="./view/Product.html" class="Show-nykaa-beautybox">BEAUTY ADVICE</a></li>
        
    </ul>
    
@@ -59,12 +59,12 @@ function navbar() {
 class="search-resultbox">
 
 <p class="trending-search-text">Trending Searches</p>
-<a href="">↝ Nykaa Cosmetics</a>
-<a href="">↝ Nykaa Naturals</a>
-<a href="">↝ Nykaa Popular Products</a>
-<a href="">↝ Nykaa Cosmetics Lipstick</a>
-<a href="">↝ Nykaa Cosmetics Eyes products</a>
-<a href="">↝ Nykaa Cosmetics Hair products</a>
+<a href="../Product.html">↝ Nykaa Cosmetics</a>
+<a href="../Product.html">↝ Nykaa Naturals</a>
+<a href="../Product.html">↝ Nykaa Popular Products</a>
+<a href="../Product.html">↝ Nykaa Cosmetics Lipstick</a>
+<a href="../Product.html">↝ Nykaa Cosmetics Eyes products</a>
+<a href="../Product.html">↝ Nykaa Cosmetics Hair products</a>
 
 </div>
 
