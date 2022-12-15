@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Number verification with OTP</title>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+<style>
+	.container {
+		width: 302px;
+		height: 175px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 20%;
+		/* bottom: 0px; */
+		margin: auto;
+        /* border: 1px solid gray; */
+	}
+	#number, #verificationcode {
+		width: calc(100% - 24px);
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+		outline: none;
+        border: none;
+        border-bottom: 1px solid grey;
+	}
+    a{
+        text-decoration: none;
+        color: rgb(63, 180, 227);
+        font-size: 16px;
+        margin: 5px;
+        float: right;
+        
+    }
+	#recaptcha-container {
+		margin-bottom: 5px;
+	}
+	#send, #verify {
+		width: 100%;
+		height: 40px;
+		color: white;
+        border-radius: 10px;
+        padding: 8px ;
+        outline: none;
+        border: none;
+        background-color: #fc2779;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 5px;
+	}
+	.p-conf, .n-conf {
+		width: calc(100% - 22px);
+		border: 2px solid green;
+		border-radius: 4px;
+		padding: 8px 10px;
+		margin: 4px 0px;
+		background-color: rgba(0, 249, 12, 0.5);
+		display: none;
+	}
+	.n-conf {
+		border-color: red;
+		background-color: rgba(255, 0, 4, 0.5);
+	}
+    #form{
+            text-align: center;
+            transition: 1ms ease-in-out;
+    }
+    .login_form{
+        text-align: center;
+            transition: 1ms ease-in-out;
+    }
+    #form>h1{
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+      
+    }
+    .login_form>h1{
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .user_data{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .login_user_data{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .login_user_data>input{
+        width: 70%;
+        margin: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+    }
+    .user_data>input{
+        width: 70%;
+        margin: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+    }
+    #forget>input{
+        width: 70%;
+        margin: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+    }
+    #send_otp,#signup,#login{
+        width: 80%;
+        color: white;
+        border-radius: 10px;
+        padding: 8px ;
+        outline: none;
+        border: none;
+        background-color: #fc2779;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #send_otp:hover{
+        background-color: #c50e54;
+    }
+    #signup,#login:hover{
+        background-color: #c50e54;
+    }
+    label{
+        font-weight: 500;
+        font-size: medium;
+        color: gray;
+        margin-left: 5px;
+    }
+    
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="sender" >
+            <label for="">Enter Your Phone Number</label>
+			<input type="text" id="number" placeholder="+91">
+			<div id="recaptcha-container"></div>
+			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+            <a href=""  id="showLogin">Already have an Account ?</a>
+		</div>
+		<div id="verifier" style="display: none">
+			<input type="text" id="verificationcode" placeholder="OTP Code">
+			<input type="button" id="verify" value="Verify" onClick="codeverify()">
+			<div class="p-conf">Number Verified</div>
+			<div class="n-conf">OTP ERROR</div>
+		</div>
+        <div id="form" style="display: none;">
+            <h1>Enter Details</h1>
+            <div class="user_data">
+               
+                <input type="email" id="email" placeholder="Enter Your Email">
+               
+                <input type="text" id="username" placeholder="Enter Your Name">
+               
+                <input type="password" id="password" placeholder="Enter Your Password">
+                <input type="button" value="signup" id="signup">
+            </div>
+        </div>
+
+        <div class="login_form" id="login_f" style="display: none;" >
+            <h1>Enter Details</h1>
+            <div class="login_user_data">
+               
+                <input type="email" id="login_email" placeholder="Enter Your Email">
+                <input type="password" id="login_password" placeholder="Enter Your Password">
+                <input type="button" value="Login" id="login">
+               <a href="" id="forget_pass">Forget Password</a>
+            </div>
+        </div>
+        <div id="forget" style="display: none;">
+            <input type="email" placeholder="Enter Your Registered Email">
+            <input type="button" value="Send" id="send_otp">
+        </div>
+	</div>
+<!--	add firebase SDK-->
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+<script>
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+  apiKey: "AIzaSyDRolNDWlubElDtXXMjomOybz7O3Ppv5jY",
+  authDomain: "phoneauth-14955.firebaseapp.com",
+  projectId: "phoneauth-14955",
+  storageBucket: "phoneauth-14955.appspot.com",
+  messagingSenderId: "773887945799",
+  appId: "1:773887945799:web:36bdbdcf2457b3e0d29562"
+};
+	firebase.initializeApp(firebaseConfig);
+   
+render();
+
+function render(){
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+  'size': 'invisible',
+  'callback': (response) => {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    // onSignInSubmit();
+  }
+});
+
+}
+
+let showlogin = document.getElementById("showLogin")
+showlogin.addEventListener("click",(e)=>{
+    showLogin(e)
+})
+function showLogin(e){
+    e.preventDefault();
+    document.getElementById('login_f').style.display = 'block';
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('verifier').style.display = 'none';
+    document.getElementById('sender').style.display = 'none';
+}
+let forget_pass = document.getElementById("forget_pass")
+forget_pass.addEventListener("click",(e)=>{
+    forget(e)
+})
+
+function forget(e){
+    e.preventDefault();
+    document.getElementById('forget').style.display = 'block';
+    document.getElementById('login_f').style.display = 'none';
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('verifier').style.display = 'none';
+    document.getElementById('sender').style.display = 'none';
+}
+
+
+
+	// function for send message
+function phoneAuth(){
+	firebase.auth().settings.appVerificationDisabledForTesting = true;
+	var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+	var number = document.getElementById('number').value;
+	firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function(confirmationResult){
+		window.confirmationResult = confirmationResult;
+		coderesult = confirmationResult;
+		document.getElementById('verifier').style.display = 'block';
+		document.getElementById('sender').style.display = 'none';
+        document.getElementById('form').style.display = 'none';
+	}).catch(function(error){
+		alert(error);
+	});
+}
+	// function for code verify
+async function codeverify (){
+	var code = document.getElementById('verificationcode').value;
+    var number = document.getElementById('number').value;
+	coderesult.confirm(code).then(function(result){
+        alert("OTP Verified")
+        localStorage.setItem("phone",number)
+        document.getElementById('form').style.display = 'block';
+        document.getElementById('verifier').style.display = 'none';
+        document.getElementById('sender').style.display = 'none';
+	}).catch(function(){
+		alert("Wrong OTP")
+	})
+}
+
+let signup = document.getElementById("signup")
+signup.addEventListener("click",(e)=>{
+    signUp(e)
+})
+
+async function signUp(e){
+    e.preventDefault();
+    let email = document.getElementById("email").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let phone = localStorage.getItem("phone")
+    let userDetail = {
+        email:email,
+        username:username,
+        phone:phone,
+        password:password
+    }
+    try {
+        const url = "http://localhost:8000/user/signup"
+    const res = await fetch(url,{
+        method:'POST',
+        body:JSON.stringify(userDetail),
+        headers:{
+            'Content-type':'application/json'
+        }
+    })
+
+
+    alert("SignUp SuccessFully")
+    location.href="../index.html"
+        
+    } catch (error) {
+        
+    }
+  
+    // console.log(userDetail)
+}
+
+let login = document.getElementById("login")
+login.addEventListener("click",(e)=>{
+    Login(e)
+})
+
+async function Login(e){
+    e.preventDefault();
+    let email=document.getElementById("login_email").value;
+    let password=document.getElementById("login_password").value;
+    const loginDetail = {
+        email:email,
+        password:password
+    }
+    try {
+        const url = "http://localhost:8000/user/login"
+     const res = await fetch(url,{
+        method:'POST',
+        body:JSON.stringify(loginDetail),
+        headers:{
+            'Content-type':'application/json'
+        }
+    })
+
+    let data = await res.json();
+    console.log(data)
+    alert("Login SuccessFully")
+    location.href="../index.html"
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+</script>
+</body>
+</html>
