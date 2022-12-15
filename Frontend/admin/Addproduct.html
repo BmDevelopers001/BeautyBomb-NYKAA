@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products</title>
+    <link rel="stylesheet" href="./style/output.css">
+    <script src="./node_modules/tw-elements/dist/js/index.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="w-60 h-full shadow-md bg-white px-1 absolute">
+          <div class="pt-4 pb-2 px-6">
+            <a href="#!">
+              <div class="flex items-center">
+                <div class="shrink-0">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+                </div>
+                <div class="grow ml-3">
+                  <p id="seller" class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <ul class="relative">
+            <li class="relative">
+                <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="seller.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Home</a>
+              </li>
+            <li class="relative">
+              <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded bg-rose-300 hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="Addproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add Products</a>
+            </li>
+            <li class="relative">
+              <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-pink-200 transition duration-300 ease-in-out" href="manageproduct.html" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage Products</a>
+            </li>
+          </ul>
+          <ul class="absolute bottom-1">
+            <li class="">
+              <button type="button" class="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Logout</button>
+            </li>
+          </ul>
+        </div>
+
+
+        <div id="container" class="border-2 h-screen flex justify-center items-center">
+            <div class="block p-6 rounded-lg w-full border shadow-md bg-white max-w-md">
+                <form>
+                  <div class="form-group mb-6">
+                    <input type="text" class="form-control block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                      placeholder="Product Title">
+                  </div>
+                  <div class="form-group mb-6">
+                    <input type="number" class="form-control block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                      placeholder="Product Price">
+                  </div>
+                  <div class="form-group mb-6">
+                    <input type="text" class="form-control block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                      placeholder="Product Brand">
+                  </div>
+                  <div class="flex justify-center">
+                    <div class="mb-6 xl:w-full">
+                     
+                      <input
+                        type="url"
+                        class="
+                          form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-white bg-clip-padding
+                          border border-solid border-gray-300
+                          rounded
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "
+                        id="exampleURL0"
+                        placeholder="URL input"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-center">
+                    <div class="mb-6 xl:w-full">
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                          <option selected>Select Category</option>
+                          <option value="1">Appliances</option>
+                          <option value="2">Bath & Body</option>
+                          <option value="3">Fragrance</option>
+                          <option value="4">Hair</option>
+                          <option value="5">Health & Wellness</option>
+                          <option value="6">Makeup</option>
+                          <option value="7">Mom & Baby</option>
+                          <option value="8">Men</option>
+                          <option value="9">Natural</option>
+                          <option value="10">Skin</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mb-6">
+                    <textarea
+                    class="
+                      form-control
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                    "
+                    id="exampleFormControlTextarea13"
+                    rows="3"
+                    placeholder="Product Description"
+                  ></textarea>
+                  </div>
+                  
+                  
+                  <button type="submit" class="
+                    w-full
+                    px-6
+                    py-2.5
+                    bg-rose-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-pink-700 hover:shadow-lg
+                    focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-pink-800 active:shadow-lg
+                    transition
+                    duration-150
+                    ease-in-out">Add Product</button>
+                </form>
+              </div>
+        </div>
+      </main>
+</body>
+</html>
