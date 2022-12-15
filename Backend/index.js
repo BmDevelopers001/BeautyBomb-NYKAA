@@ -14,6 +14,7 @@ const connection = require("./config/db")
 const productRouter = require("./routes/product.route");
 const sellerRoute = require("./routes/seller.route");
 const authenticate = require("./middlewares/seller.auth")
+const {paymentRouter}=require("./routes/payment-gateway.route")
 
 app.get("/" , (req,res) => {
     res.send("Welcome to beautybomb server")
@@ -21,7 +22,7 @@ app.get("/" , (req,res) => {
 
 
 
-
+app.use("/create-checkout-session",paymentRouter)
 app.use("/products" , authenticate)
 app.use("/products" , productRouter)
 
