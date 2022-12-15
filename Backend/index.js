@@ -1,4 +1,4 @@
-// hello devlopers---------
+
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -12,11 +12,6 @@ const productRouter = require("./routes/product.route")
 app.get("/" , (req,res) => {
     res.send("Welcome to beautybomb server")
 })
-
-
-
-
-
 
 
 
