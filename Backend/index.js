@@ -2,12 +2,18 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin : "*"
+}))
 
 const connection = require("./config/db")
-const productRouter = require("./routes/product.route")
+const productRouter = require("./routes/product.route");
+const sellerRoute = require("./routes/seller.route");
+const authenticate = require("./middlewares/seller.auth")
 
 app.get("/" , (req,res) => {
     res.send("Welcome to beautybomb server")
@@ -16,11 +22,10 @@ app.get("/" , (req,res) => {
 
 
 
-
-
-
-
+app.use("/products" , authenticate)
 app.use("/products" , productRouter)
+
+app.use("/seller" , sellerRoute)
 
 app.listen(8000 , async () => {
     try{
