@@ -717,11 +717,8 @@ class="search-resultbox">
 <button class="apply__btn">Apply</button>
  </div>   
     <div class="multiple_prod_box">
-    
    
-    </div>
-
-   
+</div>
 
     <div class="total-proceed">
         <div class="grand-total">
@@ -746,13 +743,6 @@ class="search-resultbox">
 </div>
 
 </div>
-
-
-
-
-
-
-
 
 
 
