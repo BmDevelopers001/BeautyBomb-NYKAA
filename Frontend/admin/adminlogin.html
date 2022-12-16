@@ -28,7 +28,7 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email"
               aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group mb-6">
@@ -46,7 +46,7 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword2"
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="password"
               placeholder="Password">
           </div>
           <div class="flex justify-end mb-6">
@@ -73,8 +73,19 @@
             transition
             duration-150
             ease-in-out">Sign in</button>
+
+            <p class="pt-4 text-xs text-center">Not a seller? <a class="text-rose-700" href="sellersign.html">Click here</a> </p>
         </form>
       </div>
  </div>
+ <div id="pass_msg_1" class="border text-white transition-all rounded-md p-4 fixed bottom-10 right-0 bg-green-500">
+  <h3><span id="pass_msg"></span> <span>. Redirecting To Dashboard</span></h3>
+  
+</div>
+<div id="fail_msg_2" class="border text-white transition-all rounded-md p-4 fixed bottom-10 right-0 bg-red-500">
+  <h3><span id="fail_msg"></span> <span>. Try again</span></h3>
+  
+</div>
 </body>
+<script src="./scripts/sellerlogin.js"></script>
 </html>
