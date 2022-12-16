@@ -47,7 +47,7 @@ async function getUsername(){
         }
     }
     else{
-        location.reload()
+        // location.reload()
     }
 }
 getUsername();

@@ -13,6 +13,7 @@ app.use(cors({
 const connection = require("./config/db")
 const productRouter = require("./routes/product.route");
 const sellerRoute = require("./routes/seller.route");
+const cartRouter = require("./routes/cart.route")
 
 const authenticate = require("./middlewares/seller.auth")
 const {paymentRouter}=require("./routes/payment-gateway.route")
@@ -32,7 +33,9 @@ app.use("/create-checkout-session",paymentRouter)
 
 app.use("/user",UserRouter)
 
-// app.use("/products" , authenticate)
+app.use("/cart" , cartRouter)
+
+app.use("/products" , authenticate)
 app.use("/products" , productRouter)
 
 app.use("/seller" , sellerRoute)
