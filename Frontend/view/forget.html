@@ -36,7 +36,7 @@
         
     }
 	
-	#send, #verify {
+	#send,#sendotp, #verify {
 		width: 100%;
 		height: 40px;
 		color: white;
@@ -55,17 +55,110 @@
     <div class="container">
 		<div id="sender" >
 			<input type="email" id="email" placeholder="Enter Your Registered Email..">
-			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+			<input type="button" id="sendotp" value="Send">
 		</div>
 		<div id="otp" style="display: none;">
 			<input type="text" id="verificationcode" placeholder="Enter OTP">
-			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+			<input type="button" id="verify" value="Verify OTP" >
 		</div>
 		<div id="newPassword" style="display: none;">
 			<input type="password" id="pass" placeholder="New Password">
 			<input type="password" id="confirmpass" placeholder="Confirm New Password">
-			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+			<input type="button" id="send" value="Update Password">
 		</div>
     </div>
+
+
+    <script>
+
+        let send_otp  = document.getElementById("sendotp")
+        send_otp.addEventListener("click",(e)=>{
+            sendOTP(e);
+        })
+        async function sendOTP(e){
+            e.preventDefault();
+            let email = document.getElementById("email").value;
+            let mail={
+                email:email
+            }
+            // console.log(mail)
+            try {
+               const url  = "http://localhost:8000/forget" 
+               const res = await fetch(url,{
+                method:'POST',
+                body:JSON.stringify(mail),
+                headers:{
+                    'Content-type':'application/json'
+                }
+               })
+
+               let data = await res.json();
+               console.log(data.otp)
+               localStorage.setItem("otp",data.otp)
+               alert("OTP Successfully Sended To Your Registered Gmail")
+               document.getElementById("otp").style.display='block'
+               document.getElementById("sender").style.display='none'
+               document.getElementById("newPassword").style.display='none'
+            } catch (error) {
+                alert("Failed to send OTP")
+                console.log(error)
+            }
+        }
+
+        let verify_otp  = document.getElementById("verify")
+        verify_otp.addEventListener("click",(e)=>{
+            verifyOTP(e);
+        })
+        function verifyOTP(e){
+            e.preventDefault();
+            const in_otp = document.getElementById("verificationcode").value;
+            const l_otp = localStorage.getItem("otp");
+            if(in_otp===l_otp){
+                document.getElementById("newPassword").style.display='block'
+                document.getElementById("otp").style.display='none'
+               document.getElementById("sender").style.display='none'
+            }
+            else{
+                alert("OTP did not match")
+            }
+        }
+        let changePass  = document.getElementById("send")
+        changePass.addEventListener("click",(e)=>{
+            change(e);
+        })
+        async function change(e){
+
+            const pass = document.getElementById("pass").value;
+            const confirmpass = document.getElementById("confirmpass").value;
+            let email = document.getElementById("email").value;
+            let detail={
+                email:email,
+                password:pass
+            }
+            console.log(detail)
+            if(pass===confirmpass){
+                try {
+                    const url = "http://localhost:8000/forget/update"
+                    const res = await fetch(url,{
+                        method:'PATCH',
+                        body:JSON.stringify(detail),
+                        headers:{
+                            'Content-Type':'application/json'
+                        }
+                    })
+
+                    let data = await res.json();
+                    console.log(data)
+                    alert("Password Updated Successfully")
+                    location.href='./signin.html'
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+            else{
+                alert("Password Did not Match")
+            }
+        }
+    </script>
 </body>
 </html>

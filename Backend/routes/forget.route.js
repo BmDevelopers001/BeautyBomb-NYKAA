@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const nodemailer = require('nodemailer');
 const { UserModel } = require("../models/User.model");
-
+const bcrypt = require("bcrypt")
 
 const forgetRoute = express.Router();
 
@@ -17,7 +17,7 @@ forgetRoute.post("/",async(req,res)=>{
 
             await sendEmail(email,random);
 
-            
+
             res.send({"user":user,"otp":random})
         } catch (error) {
             console.log(error)
@@ -56,6 +56,20 @@ const sendEmail = (email,otp)=>{
         console.log('success');
     });
 }
+
+forgetRoute.patch("/update",async(req,res)=>{
+    const {email,password} = req.body;
+    // console.log(req.body)
+    try {
+        bcrypt.hash(password, 4 ,async(err,hash)=>{
+            await UserModel.findOneAndUpdate({email:email},{password:hash})
+            res.send({"data":req.body})
+            })
+
+    } catch (error) {
+        res.send(error)
+    }
+})
 
 module.exports={
     forgetRoute
