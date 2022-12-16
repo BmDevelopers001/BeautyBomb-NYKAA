@@ -32,7 +32,7 @@ app.use("/create-checkout-session",paymentRouter)
 
 app.use("/user",UserRouter)
 
-app.use("/products" , authenticate)
+// app.use("/products" , authenticate)
 app.use("/products" , productRouter)
 
 app.use("/seller" , sellerRoute)
