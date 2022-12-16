@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const cartSchema = mongoose.Schema({
     productId : String,
-    userId : String
+    userID : String
 })
 
 const cartModel = mongoose.model("cart" , cartSchema);
