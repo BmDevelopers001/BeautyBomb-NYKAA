@@ -17,7 +17,7 @@ const sellerRoute = require("./routes/seller.route");
 const authenticate = require("./middlewares/seller.auth")
 const {paymentRouter}=require("./routes/payment-gateway.route")
 
-const authenticate = require("./middlewares/seller.auth");
+// const authenticate = require("./middlewares/seller.auth");
 const { UserRouter } = require("./routes/User.route");
 
 

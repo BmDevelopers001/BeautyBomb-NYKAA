@@ -9,7 +9,7 @@ const UserRouter = express.Router();
 
 
 UserRouter.post("/signup",(req,res)=>{
-    console.log(req.body)
+    
     const {email,username,password,phone}  = req.body
     try {
         bcrypt.hash(password, 4 ,async(err,hash)=>{
