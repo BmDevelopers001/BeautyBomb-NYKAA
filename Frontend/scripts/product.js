@@ -146,86 +146,93 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
  
 
-  let data = [
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    },
-    {
-      image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
-      name:"Beauty Cream",
-      price:799,
-      rating:"4.2",
-      discount:"30%",
-      brand:"nykaa cosmetics"
-    }
-  ]
+  // let data = [
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   },
+  //   {
+  //     image:"https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+  //     name:"Beauty Cream",
+  //     price:799,
+  //     rating:"4.2",
+  //     discount:"30%",
+  //     brand:"nykaa cosmetics"
+  //   }
+  // ]
 
-  AppendToProCont(data)
+  getAllProducts();
+   async function getAllProducts(){
+      const res  = await fetch("http://localhost:8000/products")
+      const data = await res.json();
+      // console.log(data.products)
+      AppendToProCont(data.products)
+   }
 
 
 
-GETCosNykaaProducts()
+
+// GETCosNykaaProducts()
 
 function AppendToProCont(data) {
 
@@ -239,10 +246,10 @@ data.forEach((prod) => {
   let div = document.createElement("div")
   div.setAttribute("class" , "prod_box")
 
-
+  // console.log(prod.name)
 
   let image = document.createElement("img")
-  image.src = prod.image
+  image.src = prod.image[0]
 
   div.onclick = function() {
     GoToProductDetail(prod)
@@ -259,9 +266,18 @@ data.forEach((prod) => {
   mrp_price = document.createElement("p")
   mrp_price.textContent = mrp.textContent + prod.price
 
+  let cat = document.createElement("p")
+  cat.innerText = "Category : "+prod.category;
+
+  let gender = document.createElement("p")
+  gender.innerText =  "Gender : "+prod.gender;
+
+
+
+
   let rati = document.createElement("p")
   rati.setAttribute("class" , "starating")
-  rati.textContent = prod.rating
+  rati.textContent = "Rating : "+prod.rating
 
   let btndiv = document.createElement("div")
   btndiv.setAttribute("class" , "btn_div")
@@ -286,14 +302,14 @@ data.forEach((prod) => {
     document.querySelector(".cart--icon").innerHTML=`<i style="font-size:24px" class="fa">&#xf290;</i>${index}`
   }
 
-  if(prod.brand == "nykaa cosmetics") {
+  // if(prod.brand == "nykaa cosmetics") {
 
   btndiv.append(wish_btn, cart_btn)
 
-  div.append(image,pname, mrp_price, rati) //
+  div.append(image,pname, mrp_price,cat,gender,rati) //
   maindiv.append(div, btndiv)
   Products_Container.append(maindiv)
-  }
+  //  }
 
 })
 

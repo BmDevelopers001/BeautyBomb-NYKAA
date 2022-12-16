@@ -8,7 +8,7 @@ const productModel = require("../models/product.model")
 productRouter.get("/" , async (req,res) => {
     try{
         let productData = await productModel.find();
-        res.send(productData)
+        res.send({"products":productData})
     }
     catch(err){
         console.log(err);
