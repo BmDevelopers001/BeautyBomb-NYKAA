@@ -36,7 +36,7 @@ app.use("/user",UserRouter)
 app.use("/forget",forgetRoute)
 app.use("/cart" , cartRouter)
 
-app.use("/products" , authenticate)
+// app.use("/products" , authenticate)
 app.use("/products" , productRouter)
 
 app.use("/seller" , sellerRoute)
