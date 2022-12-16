@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { UserModel } = require("../models/User.model");
 const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const { Userauthenticate } = require("../middlewares/user.auth");
 
 const UserRouter = express.Router();
 
@@ -33,18 +34,29 @@ UserRouter.post("/login",async(req,res)=>{
                     res.send({"msg":"Login Success","token":token})
                 }
                 else{
-                    res.send("Invalid Detail")
+                    res.send({"msg":"Invalid Details"})
                 }
             })  
         }
         else{
-            res.send("Invalid Username Password")
+            res.send({"user":user})
         }
     } catch (error) {
         console.log("something went wrong")
     }
 })
-
+UserRouter.use("/",Userauthenticate)
+UserRouter.get("/",async(req,res)=>{
+    const userID = req.body.userID;
+    try {
+        const user = await UserModel.find({_id:userID});
+        // console.log(user)
+        res.send({"user":user})
+    } catch (error) {
+        console.log(error)
+        res.send("User fetch Error");
+    }
+})
 
 module.exports={
     UserRouter

@@ -229,6 +229,7 @@ showlogin.addEventListener("click",(e)=>{
 })
 function showLogin(e){
     e.preventDefault();
+    
     document.getElementById('login_f').style.display = 'block';
     document.getElementById('form').style.display = 'none';
     document.getElementById('verifier').style.display = 'none';
@@ -287,6 +288,8 @@ signup.addEventListener("click",(e)=>{
 
 async function signUp(e){
     e.preventDefault();
+    // let token=""
+    
     let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
@@ -342,9 +345,17 @@ async function Login(e){
     })
 
     let data = await res.json();
-    console.log(data)
-    alert("Login SuccessFully")
-    location.href="../index.html"
+    console.log(data.token)
+    if(data.token){
+        localStorage.setItem("token",data.token)
+        alert("Login SuccessFully")
+        location.href="../index.html"
+
+    }
+    else{
+        alert("Invalid Username or Password")
+    }
+    
         
     } catch (error) {
         console.log(error)
