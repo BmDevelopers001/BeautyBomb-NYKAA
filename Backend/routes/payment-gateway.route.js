@@ -60,7 +60,8 @@ mode:"payment",
 line_items:array
 ,
 success_url:"https://stripe.com/docs/testing#cards",
-cancel_url:"https://stripe.com/docs/testing#cards"
+cancel_url:"https://stripe.com/docs/testing#cards",
+billing_address_collection:"required"
 })    
 
 res.send({"url":session.url})
