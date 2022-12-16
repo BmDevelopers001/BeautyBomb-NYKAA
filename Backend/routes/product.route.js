@@ -28,6 +28,18 @@ productRouter.get("/category/:category" , async (req,res) => {
     }
 })
 
+productRouter.get("/productid/:_id", async (req, res) => {
+    const _id = req.params._id
+    try {
+        let data = await productModel.findOne({ _id });
+        res.send(data)
+    }
+    catch (err) {
+        console.log(err);
+        res.send({ "err": "Error getting filtered data" })
+    }
+})
+
 productRouter.post("/add" , async (req,res) => {
     const payload = req.body;
 

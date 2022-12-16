@@ -6,9 +6,19 @@ const cartRouter = express.Router();
 const cartModel = require("../models/cart.model");
 const productModel = require("../models/product.model");
 const { userModel } = require("../models/User.model")
+const { Userauthenticate } = require("../middlewares/user.auth")
 
-cartRouter.get("/" , (req,res) => {
-    res.send("cart")
+cartRouter.use(Userauthenticate)
+cartRouter.get("/" , async (req,res) => {
+    const userID = req.body.userID
+    try{
+        const cartData = await cartModel.find({userID});
+        res.send(cartData)
+    }
+    catch(err){
+        console.log(err);
+        res.send({"err" : "error getting data from cart"})
+    }
 })
 
 cartRouter.post("/add" , async (req,res) => {

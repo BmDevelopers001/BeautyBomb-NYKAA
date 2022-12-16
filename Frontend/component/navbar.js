@@ -1495,4 +1495,4 @@ class="search-resultbox">
 }
 
 
-export {navbar}
+export { navbar }
