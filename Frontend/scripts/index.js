@@ -1,5 +1,4 @@
 
-
 import {navbar} from "../component/navbar.js"
 
 let nav = document.getElementById("navbar")
@@ -10,6 +9,52 @@ import {FOOTER} from "../component/pagefooter.js"
 
 let footerpage = document.querySelector("footer")
 footerpage.innerHTML = FOOTER()
+
+const logout = document.getElementById("FOR-Sign")
+
+logout.addEventListener("click",()=>{
+    Logout()
+})
+
+function Logout(){
+    localStorage.setItem("token",null)
+    // location.reload();
+    const token = localStorage.getItem("token")
+    getUsername();
+    console.log(token)
+    location.href = "./view/signin.html"
+}
+
+async function getUsername(){
+    // location.reload()
+    // const username  = document.getElementById("usernamechange").innerText;
+    const token = localStorage.getItem("token")
+    if(token!=null){
+
+        try {
+            const url = "http://localhost:8000/user"
+            const res = await fetch(url,{
+                headers:{
+                    'Content-type':'application/json',
+                    Authorization:`Bearer ${localStorage.getItem("token")}`
+                }
+            })
+            const data = await res.json();
+            console.log(data.user[0].username)
+            document.getElementById("usernamechange").innerText = data.user[0].username;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    else{
+        location.reload()
+    }
+}
+getUsername();
+
+
+
+
 
 
 
@@ -384,3 +429,4 @@ function Showluxe_Box() {
 function HIDEluxe_Box() {
     Luxe_box.style.display = "none"
 }
+

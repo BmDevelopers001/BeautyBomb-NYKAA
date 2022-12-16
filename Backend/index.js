@@ -15,11 +15,9 @@ const productRouter = require("./routes/product.route");
 const sellerRoute = require("./routes/seller.route");
 const authenticate = require("./middlewares/seller.auth");
 const { UserRouter } = require("./routes/User.route");
-
 app.get("/" , (req,res) => {
     res.send("Welcome to beautybomb server")
 })
-
 
 
 app.use("/user",UserRouter)

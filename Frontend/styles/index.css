@@ -967,3 +967,7 @@ li {
   transform: skewX(-20deg);
   border-radius: 0.5rem;
 }
+#logout{
+  margin-left: 15px;
+  cursor: pointer;
+}
