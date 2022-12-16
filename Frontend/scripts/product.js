@@ -1,4 +1,5 @@
 var slideindexval = 1;
+let i=localStorage.getItem("index")||0
 SHOWSLIDESOFPRODUCTS(slideindexval);
 
 function PlusSlidePro(n) {
@@ -140,11 +141,10 @@ function SHOWPriceFil() {
 
 let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
-async function GETCosNykaaProducts() {
 
-  // let res = await fetch(`http://localhost:5000/api/products`)
 
-  // let data = await res.json()
+
+ 
 
   let data = [
     {
@@ -223,7 +223,7 @@ async function GETCosNykaaProducts() {
 
   AppendToProCont(data)
 
-}
+
 
 GETCosNykaaProducts()
 
@@ -279,7 +279,11 @@ data.forEach((prod) => {
   cart_btn.innerText = "ADD TO BAG"
 
   cart_btn.onclick = function() {
+    i++
+    let index=localStorage.getItem("index")||0
+    localStorage.setItem("index",JSON.stringify(i))
     AddToCartStore(prod)
+    document.querySelector(".cart--icon").innerHTML=`<i style="font-size:24px" class="fa">&#xf290;</i>${index}`
   }
 
   if(prod.brand == "nykaa cosmetics") {

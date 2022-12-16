@@ -14,6 +14,16 @@ li {
   list-style: none;
 }
 
+.discount{
+  position: relative;
+  left: 17px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  width: 90%;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .arrow {
   top: 600px;
 
@@ -675,12 +685,15 @@ li {
 
 .Shopping-bag-box {
   position: absolute;
+  overflow-y: auto;
   top: 0;
   right: 0;
   width: 26%;
-  background-color: #f3f3f3;
+  background-color:white;
   min-height: 100vh;
   display: none;
+  border: 1px solid black;
+  z-index: 1;
 }
 
 .Shopping-bag-head {
@@ -967,7 +980,52 @@ li {
   transform: skewX(-20deg);
   border-radius: 0.5rem;
 }
-#logout{
-  margin-left: 15px;
-  cursor: pointer;
+
+
+.multiple_prod_box{
+  margin-top: 20px;
+}
+.cart_div{
+  /* border: 1px solid black; */
+  border-radius: 10px;
+height: 100px;
+display: flex;
+margin-top: 20px;
+position: relative;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.cart_image{
+  height: 100px;
+}
+.decreaser{
+width: 20px;
+position: absolute;
+left: 245px;
+height: 20px;
+text-align: center;
+top: 78;
+}
+.increaser{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 270px;
+  top: 78;
+}
+.deleteicon{
+  position: absolute;
+  float: right;
+  left: 280px;
+}
+.quantity{
+  position: relative;
+  top: 60;
+  left: -125;
+
+}
+.cart_price{
+position: relative;
+top: 30;
+left: -100;
+>>>>>>> 64345023e6449585ec0225a7dcf537e8f2bfae16
 }
