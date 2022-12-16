@@ -312,7 +312,10 @@ async function signUp(e){
 
 
     alert("SignUp SuccessFully")
-    location.href="../index.html"
+    document.getElementById('login_f').style.display = 'block';
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('verifier').style.display = 'none';
+    document.getElementById('sender').style.display = 'none';
         
     } catch (error) {
         
@@ -350,6 +353,7 @@ async function Login(e){
         localStorage.setItem("token",data.token)
         alert("Login SuccessFully")
         location.href="../index.html"
+    
 
     }
     else{

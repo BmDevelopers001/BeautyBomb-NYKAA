@@ -41,7 +41,7 @@ async function getUsername(){
             })
             const data = await res.json();
             console.log(data.user[0].username)
-            document.getElementById("usernamechange").innerText = data.user[0].username;
+            document.getElementById("usernamechange").innerText = "Welcome,"+data.user[0].username;
         } catch (error) {
             console.log(error)
         }
