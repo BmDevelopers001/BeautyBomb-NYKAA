@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+</head>
+<style>
+   	.container {
+		width: 302px;
+		height: 175px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 20%;
+		/* bottom: 0px; */
+		margin: auto;
+        /* border: 1px solid gray; */
+	}
+	#email, #verificationcode,#pass,#confirmpass {
+		width: calc(100% - 24px);
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+		outline: none;
+        border: none;
+        border-bottom: 1px solid grey;
+	}
+    a{
+        text-decoration: none;
+        color: rgb(63, 180, 227);
+        font-size: 16px;
+        margin: 5px;
+        float: right;
+        
+    }
+	
+	#send, #verify {
+		width: 100%;
+		height: 40px;
+		color: white;
+        border-radius: 10px;
+        padding: 8px ;
+        outline: none;
+        border: none;
+        background-color: #fc2779;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 5px;
+	}
+</style>
+<body>
+    <div class="container">
+		<div id="sender" >
+			<input type="email" id="email" placeholder="Enter Your Registered Email..">
+			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+		</div>
+		<div id="otp" style="display: none;">
+			<input type="text" id="verificationcode" placeholder="Enter OTP">
+			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+		</div>
+		<div id="newPassword" style="display: none;">
+			<input type="password" id="pass" placeholder="New Password">
+			<input type="password" id="confirmpass" placeholder="Confirm New Password">
+			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+		</div>
+    </div>
+</body>
+</html>

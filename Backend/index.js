@@ -20,6 +20,7 @@ const {paymentRouter}=require("./routes/payment-gateway.route")
 
 // const authenticate = require("./middlewares/seller.auth");
 const { UserRouter } = require("./routes/User.route");
+const { forgetRoute } = require("./routes/forget.route");
 
 
 app.get("/" , (req,res) => {
@@ -32,7 +33,7 @@ app.get("/" , (req,res) => {
 app.use("/create-checkout-session",paymentRouter)
 
 app.use("/user",UserRouter)
-
+app.use("/forget",forgetRoute)
 app.use("/cart" , cartRouter)
 
 app.use("/products" , authenticate)
