@@ -44,7 +44,7 @@
 
         <div id="container" class="border-2 h-screen flex justify-center items-center">
             <div class="block p-6 rounded-lg w-full border shadow-md bg-white max-w-md">
-                <form>
+                <form action="/add" method="post">
                   <div class="form-group mb-6">
                     <input type="text" class="form-control block
                       w-full
@@ -59,7 +59,7 @@
                       transition
                       ease-in-out
                       m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name"
                       placeholder="Product Title">
                   </div>
                   <div class="form-group mb-6">
@@ -76,7 +76,7 @@
                       transition
                       ease-in-out
                       m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="price"
                       placeholder="Product Price">
                   </div>
                   <div class="form-group mb-6">
@@ -93,8 +93,8 @@
                       transition
                       ease-in-out
                       m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
-                      placeholder="Product Brand">
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="qty"
+                      placeholder="Quantity">
                   </div>
                   <div class="flex justify-center">
                     <div class="mb-6 xl:w-full">
@@ -118,7 +118,7 @@
                           m-0
                           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                         "
-                        id="exampleURL0"
+                        id="image"
                         placeholder="URL input"
                       />
                     </div>
@@ -139,18 +139,44 @@
                         transition
                         ease-in-out
                         m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" id="category">
                           <option selected>Select Category</option>
-                          <option value="1">Appliances</option>
-                          <option value="2">Bath & Body</option>
-                          <option value="3">Fragrance</option>
-                          <option value="4">Hair</option>
-                          <option value="5">Health & Wellness</option>
-                          <option value="6">Makeup</option>
-                          <option value="7">Mom & Baby</option>
-                          <option value="8">Men</option>
-                          <option value="9">Natural</option>
-                          <option value="10">Skin</option>
+                          <option value="Appliances">Appliances</option>
+                          <option value="Bath & Baby">Bath & Body</option>
+                          <option value="Fragrance">Fragrance</option>
+                          <option value="Hair">Hair</option>
+                          <option value="Hair & Wellness">Health & Wellness</option>
+                          <option value="Makeup">Makeup</option>
+                          <option value="Mom & Baby">Mom & Baby</option>
+                          <option value="Men">Men</option>
+                          <option value="Natural">Natural</option>
+                          <option value="Skin">Skin</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="flex justify-center">
+                    <div class="mb-6 xl:w-full">
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" id="gender">
+                          <option selected>Gender</option>
+                          <option value="Female">Female</option>
+                          <option value="Male">Male</option>
+                          <option value="Unisex">Unisex</option>
+                          <option value="Boy">Boy</option>
+                          <option value="Girl">Girl</option>
                       </select>
                     </div>
                   </div>
@@ -173,7 +199,7 @@
                       m-0
                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                     "
-                    id="exampleFormControlTextarea13"
+                    id="description"
                     rows="3"
                     placeholder="Product Description"
                   ></textarea>
@@ -203,4 +229,5 @@
         </div>
       </main>
 </body>
+<script src="./scripts/addproduct.js"></script>
 </html>
