@@ -1,0 +1,17 @@
+.card{
+    width: 30%;
+    margin-bottom: 1.5rem;
+    padding: .5rem 0;
+}
+
+h1{
+        /* width: 100px; */
+        overflow: hidden;
+        vertical-align: middle;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    
+      
+}
