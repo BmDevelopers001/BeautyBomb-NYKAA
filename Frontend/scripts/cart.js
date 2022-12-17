@@ -20,73 +20,88 @@ let cartData = async () => {
         })
         .then((res) => res.json())
         .then((res) => {    
-            cart(res)
+            append(res)
         })
         .catch((err) => console.log(err))
 }
 cartData()
 
-let arr = []
+// let arr = []
 
-function cart(data){
-    data.forEach(async function(el){
-        // console.log(el.productId);
-       try{
-           let res = await fetch(`http://localhost:8000/products/productid/${el.productId}`)
+// function cart(data){
+//     data.forEach(async function(el){
+//         // console.log(el.productId);
+//        try{
+//            let res = await fetch(`http://localhost:8000/products/productid/${el.productId}`)
 
-           let final_data = await res.json()
-            arr.push(final_data)
-        //    console.log(final_data);
-        // let c_data = await final_data.json()
-        // console.log(c_data)
-        //    arr.push(JSON.stringify(final_data))
-       }
-       catch(err){
-        console.log(err);
-       }
-        // .then((res) => res.json())
-        // .then((res) => {
-        //     // arrPush(res)
-        // })
-        // .catch((err) => console.log(err))
-    })
+//            let final_data = await res.json()
+//             arr.push(final_data)
+//         //    console.log(final_data);
+//         // let c_data = await final_data.json()
+//         // console.log(c_data)
+//         //    arr.push(JSON.stringify(final_data))
+//        }
+//        catch(err){
+//         console.log(err);
+//        }
+//         // .then((res) => res.json())
+//         // .then((res) => {
+//         //     // arrPush(res)
+//         // })
+//         // .catch((err) => console.log(err))
+//     })
     
-}
+// }
 
-console.log(arr)
+// console.log(arr)
 
 function append(data) {
     container.innerHTML = null
     data.forEach(function (prod) {
-        console.log(prod.name);
-    //     let cart_div = document.createElement("div");
-    //     cart_div.setAttribute("class", "cart_div");
+        let el = prod.productDetails
+        // console.log(el.image[0]);
+        let cart_div = document.createElement("div");
+        cart_div.setAttribute("class", "cart_div");
 
-    //     let image = document.createElement("img");
-    //     image.src = prod.image[0];
-    //     image.setAttribute("class", "cart_image");
+        let image = document.createElement("img");
+        image.src = el.image[0];
+        image.setAttribute("class", "cart_image");
 
-    //     let des = document.createElement("p");
-    //     des.setAttribute("class", "description");
-    //     des.innerText = prod.name;
+        let des = document.createElement("p");
+        des.setAttribute("class", "description");
+        des.innerText = el.name;
 
-    //     let price = document.createElement("p");
-    //     price.innerText = prod.price;
-    //     price.setAttribute("class", "cart_price");
+        let price = document.createElement("p");
+        price.innerText = el.price;
+        price.setAttribute("class", "cart_price");
 
-    //     let icon = document.createElement("span");
-    //     icon.setAttribute("class", "deleteicon")
-    //     icon.innerHTML = `<i class="fa fa-trash-o" style="font-size:16px"></i>`
-    //     icon.onclick = function () {
-    //         deleteProduct(prod)
-    //     }
+        let icon = document.createElement("span");
+        icon.setAttribute("class", "deleteicon")
+        icon.innerHTML = `<i class="fa fa-trash-o" style="font-size:16px"></i>`
+        icon.onclick = function () {
+            deleteProduct(prod)
+        }
 
-    //     cart_div.append(image,des, icon, price)
-    //     container.append(cart_div)
+        cart_div.append(image,des, icon, price)
+        container.append(cart_div)
     });
 }
 
-// append(arr)
+async function deleteProduct(prod){
+    try{
+        await fetch(`http://localhost:8000/cart/delete/${prod._id}` , {
+            method : "DELETE",
+            headers : {
+                authorization : `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+    }
+    catch(err){
+        console.log(err);
+    }
+    // location.reload()
+    cartData()
+}
 
 
 

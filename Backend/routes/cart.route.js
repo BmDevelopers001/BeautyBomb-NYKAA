@@ -23,16 +23,39 @@ cartRouter.get("/" , async (req,res) => {
 
 cartRouter.post("/add" , async (req,res) => {
     const payload = req.body;
+    const userID = req.body.userID
     try{
-        await cartModel.create(payload);
-        res.send({"msg" : "Product added to cart successfully"})
+        let productDetails = await productModel.findOne({_id : payload.productId})
+        // res.send(productDetails)
+        
+        try {
+            await cartModel.create({productDetails , userID});
+            res.send({"msg" : "Product added to cart successfully"})
+        }
+        catch (err) {
+            console.log(err);
+            res.send({ "err": "Error adding product to cart" })
+        }
+        
+    }
+    catch(err){
+        console.log("Error getting productDetails");
+        console.log(err);
+    }
+    
+})
+
+cartRouter.delete("/delete/:_id" , async (req,res) => {
+    const id = req.params._id
+    try{
+        await cartModel.findByIdAndDelete(id);
+        res.send({"msg" : "Cart deleted successfully"})
     }
     catch(err){
         console.log(err);
-        res.send({"err" : "Error adding product to cart"})
+        res.send({"err" : "Error deleting cart"})
     }
 })
-
 
 
 
