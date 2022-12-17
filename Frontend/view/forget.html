@@ -93,7 +93,7 @@
                })
 
                let data = await res.json();
-               console.log(data.otp)
+            //    console.log(data.otp)
                localStorage.setItem("otp",data.otp)
                alert("OTP Successfully Sended To Your Registered Gmail")
                document.getElementById("otp").style.display='block'
@@ -148,7 +148,7 @@
                     })
 
                     let data = await res.json();
-                    console.log(data)
+                    // console.log(data)
                     alert("Password Updated Successfully")
                     location.href='./signin.html'
                 } catch (error) {
