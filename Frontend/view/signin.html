@@ -187,13 +187,13 @@
                 <input type="email" id="login_email" placeholder="Enter Your Email">
                 <input type="password" id="login_password" placeholder="Enter Your Password">
                 <input type="button" value="Login" id="login">
-               <a href="" id="forget_pass">Forget Password</a>
+               <a href="../view/forget.html" id="forget_pass">Forget Password</a>
             </div>
         </div>
-        <div id="forget" style="display: none;">
+        <!-- <div id="forget" style="display: none;">
             <input type="email" placeholder="Enter Your Registered Email">
             <input type="button" value="Send" id="send_otp">
-        </div>
+        </div> -->
 	</div>
 <!--	add firebase SDK-->
 <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
@@ -240,14 +240,14 @@ forget_pass.addEventListener("click",(e)=>{
     forget(e)
 })
 
-function forget(e){
-    e.preventDefault();
-    document.getElementById('forget').style.display = 'block';
-    document.getElementById('login_f').style.display = 'none';
-    document.getElementById('form').style.display = 'none';
-    document.getElementById('verifier').style.display = 'none';
-    document.getElementById('sender').style.display = 'none';
-}
+// function forget(e){
+//     e.preventDefault();
+//     document.getElementById('forget').style.display = 'block';
+//     document.getElementById('login_f').style.display = 'none';
+//     document.getElementById('form').style.display = 'none';
+//     document.getElementById('verifier').style.display = 'none';
+//     document.getElementById('sender').style.display = 'none';
+// }
 
 
 
