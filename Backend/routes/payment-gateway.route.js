@@ -14,10 +14,12 @@ const { response } = require("express");
 paymentRouter.use(express.json())
 paymentRouter.post("/",async(req,res)=>{
 // console.log(req.body)
-let something;  
+console.log(req.body)
+
 // STEP-1 IS TO FIND ALL THE ELEMENTS WHICH MATHCES
 try {
     let query= await productModel.find({})
+    // console.log(query)
     let array$=req.body.map((item)=>{
 for(let i=0;i<query.length;i++){
 if(item._id==query[i]._id)
@@ -25,15 +27,10 @@ if(item._id==query[i]._id)
 return query[i]
 }
 })
-// for(let i=0;i<array$.length;i++){
-// if(array$[i][quantity]==undefined){
-//     console.log(array$)
-//     array$[i][quantity]=req.body[i].quantity
-// }
 
-// }
 
 let i=-1
+console.log(array$,req.body)
 let array=array$.map((item)=>{
 while(i<req.body.length){
     i++
@@ -49,10 +46,7 @@ while(i<req.body.length){
         },
         quantity:+(req.body[i].quantity)
     }
-
 }  
-
-
 })
 const session=await stripe.checkout.sessions.create({
 payment_method_types:["card"],
