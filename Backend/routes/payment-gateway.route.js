@@ -33,7 +33,6 @@ return query[i]
 
 // }
 
-
 let i=-1
 let array=array$.map((item)=>{
 while(i<req.body.length){
@@ -44,7 +43,8 @@ while(i<req.body.length){
         currency:"INR",
         product_data:{
          name:item.name 
-        } ,
+        }
+    ,
         unit_amount:item.price*100
         },
         quantity:+(req.body[i].quantity)
@@ -59,7 +59,7 @@ payment_method_types:["card"],
 mode:"payment",
 line_items:array
 ,
-success_url:"",
+success_url:"https://stripe.com/docs/testing#cards",
 cancel_url:"https://stripe.com/docs/testing#cards",
 billing_address_collection:"required"
 })    
