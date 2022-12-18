@@ -34,13 +34,13 @@ sellerRoute.post("/login" , async (req,res) => {
     const { email, password } = req.body;
     try {
         const user = await sellerModel.find({ email })
-
+        
         if (user.length > 0) {
             const hashed_password = user[0].password;
             bcrypt.compare(password, hashed_password, function (err, result) {
                 if (result) {
                     const token = jwt.sign({ "sellerId": user[0]._id }, 'hush');
-                    res.send({ "msg": "Login successfull", "token": token })
+                    res.send({ "msg": "Login successfull", "token": token, "seller": user[0].name, "sellerid": user[0]._id })
                 }
                 else {
                     res.send({ "msg": "Login failed" })

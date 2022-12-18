@@ -1,3 +1,16 @@
+let seller = localStorage.getItem("seller")
+
+if (seller) {
+    document.querySelector("#seller").innerHTML = seller
+} else {
+    location.href = "adminlogin.html"
+}
+
+document.querySelector("#logout").addEventListener("click", ()=>{
+    localStorage.removeItem("seller")
+    location.reload()
+})
+
 document.querySelector("form").addEventListener("submit", async(e)=>{
     e.preventDefault()
     let name = document.querySelector("#name").value
@@ -6,7 +19,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
     let category = document.querySelector("#category").value
     let gender = document.querySelector("#gender").value
     let description = document.querySelector("#description").value
-    let image = document.querySelector("#image").value
+    let image = document.querySelector("#image")
     
     const data = {
         name,
@@ -15,7 +28,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
         category,
         gender,
         description,
-        image,
+        image:[image.value]
     }
     console.log(data);
 

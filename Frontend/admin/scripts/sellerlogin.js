@@ -26,7 +26,10 @@ try {
 
     if(result.token){
         localStorage.setItem("token",result.token)
+        localStorage.setItem("seller", (result.seller))
+        localStorage.setItem("sellerid", (result.sellerid))
     }
+    
 
     if(result.msg == "Login successfull"){
         document.querySelector("#pass_msg_1").style.display = "block"
