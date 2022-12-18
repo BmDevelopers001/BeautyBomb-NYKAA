@@ -1,0 +1,244 @@
+body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  body{
+    background-color: rgb(241 243 244);
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+   color: green;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    margin-left:305px;
+    border-radius: 3px 0 0 3px;
+
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color:whitesmoke;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+    margin-left: 20px;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  #containerdiv{
+display: flex;
+height: 600px;
+/* border: 1px solid black; */
+
+  }
+#carousel{
+/* border: 1px solid black; */
+height: inherit;
+width: 30%;
+margin-left: 5%;
+background-color: white;
+  }
+  .container{
+    margin-top: 50px;
+  }
+  #product{
+    /* border: 1px solid black; */
+    width: 60%;
+    padding-left:2% ;
+    background-color: white;
+  }
+  .checked {
+    color: orange;
+  }
+#ratingsection{
+    margin-top: 15px;
+}
+#free{
+    padding-right: 30%;
+    height: 90px;
+    background-color: white;
+padding-top: 10px;
+    /* border: 1px solid black; */
+}#freeloreal{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#cartanddelivery{
+    display: flex;
+    height: 170px;
+    /* border: 1px solid black; */
+    margin-top: -20px;
+}.vl {
+    border-left: 1px solid grey;
+    height: 120px;
+    margin-top: 35px;
+margin-left: 20px;  
+}
+  #addbagger{
+    width: 250px;
+    height: 50px;
+   background-color:  rgb(252, 39, 121);
+   color: white;
+   margin-top: 56px;
+   font-size: 20px;
+   margin-left: 10px;
+   border: none;
+  }
+  #deliveryheading{
+position: relative;
+top: 50px;
+left: 20px;
+  }
+  #address{
+margin:55px 0px 50px 20px;
+height: 45px;
+width: 230px;
+}
+#prodbottom{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+grid-template-rows: 70px;
+text-align: center;
+color: rgba(0,19,37,0.64);
+}
+.bottomOfprod{
+    /* border: 1px solid black; */
+    padding-top: 30px;
+}
+.bottomOfprod1{
+    /* border: 1px solid black; */
+    padding-top: 30px;
+}
+.row{
+  margin-top: 50px;
+  
+}
+.tooltiptext{
+  display: none;
+position: relative;
+z-index: 1;
+background-color: black;
+color: whitesmoke;
+text-align: center;
+}
+.bottomOfprod:hover .tooltiptext{
+  display: block;
+  cursor: pointer;
+}
+
+#triangle-down{
+width: 0;
+height: 0;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid black;
+position: relative;
+left: 100px;
+display: none;
+}
+.bottomOfprod:hover #triangle-down{
+  display: block;
+  cursor: pointer;
+}
+.proddes{
+margin-top: 30px;
+margin-left: 7%; 
+}
+#productmaindescription{
+width: 67%;
+height: auto;
+border: 1px solid black;
+margin-left: 5%;
+margin-top: 18px;
+background-color: white;
+padding: 20px 20px 20px 30px;
+text-align: center;
+text-decoration: solid;
+font-size: 20px;
+line-height: 30px;
+}
+.splide{
+  width: 50%;
+  height: 300px;
+  margin-left: 5%;
+  margin-top: 30px;
+}
+/* .splide__slide{
+  margin-left: 20em;
+gap: 200px;
+border: 2px solid black;
+} */
