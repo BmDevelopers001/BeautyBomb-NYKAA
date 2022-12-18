@@ -23,6 +23,7 @@ const totalProducts = async()=>{
             }
         })
         let result = await res.json()
+       
         document.querySelector(".loader").style.display = "none"
         appendData(result)
     } catch (error) {
@@ -96,9 +97,15 @@ let deleteProduct = async(id)=>{
             }
         })
         const data = await response.json();
-        document.querySelector("#pass_msg_1").style.display = "block"
-        document.querySelector("#pass_msg").innerHTML = data.msg
-        passMsg()
+        if(data.msg == "Product Deleted successfully"){
+            document.querySelector("#pass_msg_1").style.display = "block"
+            document.querySelector("#pass_msg").innerHTML = data.msg
+            passMsg()
+        }else{
+            document.querySelector("#fail_msg_2").style.display = "block"
+            document.querySelector("#fail_msg").innerHTML = data.msg
+            failMsg()
+        }
     } catch (err) {
         console.log(err)
         
@@ -109,7 +116,7 @@ function passMsg(){
     setTimeout(()=>{
         document.querySelector("#pass_msg_1").style.display = "none"
         location.reload()
-    }, 3000)
+    }, 2000)
 }
 
 function failMsg(){
