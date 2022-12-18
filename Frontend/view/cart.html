@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div id="container">
+        <div id="cart_div"></div>
+        <div id="cal_div">
+            <div id="coupen_div">
+                <p id="coupen_p">Apply BB20 to get 20% discount</p>
+                <div>
+                    <input type="text" id="dis_inp">
+                    <button id="coupen_apply">Apply</button>
+                </div>
+            </div>
+
+            <div class="calculation">
+                <div>Total</div>
+                <div id="cal_total"></div>
+            </div>
+
+            <div class="calculation">
+                <div>Discount</div>
+                <div id="discount">- 0</div>
+            </div>
+            <hr>
+            <div id="grand-total">
+                <div>
+                    <p>Grand Total</p>
+                    <p id="Toatlrupee"></p>
+                </div>
+                <div>
+                    <button id="proceed">Proceed</button>
+                </div>
+            </div>
+        
+            </>
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+
+</html>
+
+<script src="../scripts/cart.js" type="module"></script>
