@@ -847,7 +847,7 @@ li {
   width: 28%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  line-height: 0;
+  /* line-height: 0; */
   z-index: 100;
 }
 .grand-total {

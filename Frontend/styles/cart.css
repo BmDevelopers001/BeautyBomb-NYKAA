@@ -1,0 +1,157 @@
+body{
+    padding: 20px;
+    background-color: #f1f3f6;
+}
+
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+#cart_div{
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* margin: auto; */
+    /* border: 1px solid blue; */
+}
+
+#cart_product{
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid rgba(92, 91, 91, 0.365); */
+}
+
+#para_div{
+    display: flex;
+    justify-content: space-between;
+    /* justify-items: center; */
+    /* border: 1px solid; */
+}
+
+#qty_div{
+    display: flex;
+    /* padding-left: 5px; */
+    align-items: center;
+    /* border: 1px solid; */
+}
+
+#qty_div>button{
+    padding: 0px 10px;
+    border: none;
+    border: 1px solid;
+    margin-left: 10px;
+    font-size: 25px;
+    background-color: #ffffff;
+    /* color: blue; */
+    /* border-radius: 100%; */
+}
+
+#qty_div>button:hover{
+    cursor: pointer;
+}
+
+#del_icon:hover{
+    cursor: pointer;
+}
+
+#qty_div>button:nth-child(3){
+    padding: 0px 14px;
+    margin-left: 0px;
+}
+
+#img_div{
+    width: 16%;
+    /* border: 1px solid; */
+}
+
+#item_price{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#img_div > img{
+    width: 100%;
+}
+
+#details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+}
+
+/* #fc2779 */
+
+#cal_div{
+    padding: 20px;
+    position: static;
+    background-color: #ffffff;
+    height: 215px;
+    border-radius: 10px;
+}
+
+#grand-total{
+    display: flex;
+    justify-content: space-between;
+}
+
+#Toatlrupee{
+    color: #fc2779;
+    font-size: 20px;
+}
+
+#proceed{
+    background-color: #fc2779;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    padding: 10px 25px;
+}
+
+#coupen_p{
+    color: #fc2779;
+}
+
+#coupen_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#coupen_apply{
+    background-color: #fc2779;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.calculation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculation>div:first-child{
+    color: #fc2779;
+    font-weight: 500;
+    font-size: px;
+    margin-bottom: 5px;
+}
+
+#discount{
+    margin-bottom: 10px;
+}
+
+hr{
+    margin-bottom: 10px;
+}
