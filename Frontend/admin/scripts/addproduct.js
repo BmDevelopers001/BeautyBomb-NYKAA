@@ -1,3 +1,8 @@
+
+document.querySelector("#pass_msg_1").style.display = "none"
+document.querySelector("#fail_msg_2").style.display = "none"
+
+
 let seller = localStorage.getItem("seller")
 
 if (seller) {
@@ -36,15 +41,37 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
         const res = await fetch("http://localhost:8000/products/add", {
             method: "POST",
             body: JSON.stringify(data),
-            Headers:{
+            headers:{
                 "content-type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
             }
         })
 
         const result = await res.json()
-        console.log(result);
+        if(result.msg == "Product added"){
+            document.querySelector("form").reset()
+            document.querySelector("#pass_msg_1").style.display = "block"
+            document.querySelector("#pass_msg").innerHTML = result.msg
+            passMsg()
+        }else{
+            document.querySelector("#fail_msg_2").style.display = "block"
+            document.querySelector("#fail_msg").innerHTML = result.msg
+            failMsg()
+        }
     } catch (error) {
         console.log(error);
     }
 })
+
+function passMsg(){
+    setTimeout(()=>{
+        document.querySelector("#pass_msg_1").style.display = "none"
+        // location.href = "seller.html"
+    }, 2000)
+}
+function failMsg(){
+    setTimeout(()=>{
+        document.querySelector("#fail_msg_2").style.display = "none"
+        // document.querySelector("#pass_msg").innerHTML = msg
+    }, 3000)
+}

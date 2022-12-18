@@ -2007,6 +2007,11 @@ textarea.form-control.is-invalid {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.border-r-pink-400 {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(244 114 182 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2202,6 +2207,11 @@ textarea.form-control.is-invalid {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-semibold {

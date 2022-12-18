@@ -44,7 +44,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
     let category = document.querySelector("#category").value
     let gender = document.querySelector("#gender").value
     let description = document.querySelector("#description").value
-    // let image = document.querySelector("#image").value
+    let image = document.querySelector("#image")
     
     const data = {
         name,
@@ -53,7 +53,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
         category,
         gender,
         description,
-        image,
+        image: [image.value]
     }
     console.log(data);
 
@@ -68,9 +68,15 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
         })
 
         const result = await res.json()
-        document.querySelector("#pass_msg_1").style.display = "block"
-        document.querySelector("#pass_msg").innerHTML = result.msg
-        passMsg()
+        if(result.msg == "Product edited successfully"){
+            document.querySelector("#pass_msg_1").style.display = "block"
+            document.querySelector("#pass_msg").innerHTML = result.msg
+            passMsg()
+        }else{
+            document.querySelector("#fail_msg_2").style.display = "block"
+            document.querySelector("#fail_msg").innerHTML = result.msg
+            failMsg()
+        }
         // console.log(result);
     } catch (error) {
         console.log(error);
@@ -82,5 +88,12 @@ function passMsg(){
     setTimeout(()=>{
         document.querySelector("#pass_msg_1").style.display = "none"
         location.href = "manageproduct.html"
+    }, 2000)
+}
+
+function failMsg(){
+    setTimeout(()=>{
+        document.querySelector("#fail_msg_2").style.display = "none"
+        // document.querySelector("#pass_msg").innerHTML = msg
     }, 3000)
 }

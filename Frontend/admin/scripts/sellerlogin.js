@@ -51,7 +51,7 @@ function passMsg(){
     setTimeout(()=>{
         document.querySelector("#pass_msg_1").style.display = "none"
         location.href = "seller.html"
-    }, 3000)
+    }, 2000)
 }
 function failMsg(){
     setTimeout(()=>{
