@@ -47,7 +47,7 @@ productRouter.get("/sellerpd/:slid", async (req, res) => {
     const slid = req.params.slid
     
     try {
-        let data = await productModel.find({ sellerID: slid });
+        let data = await productModel.find({ sellerId: slid });
         res.send(data)
     }
     catch (err) {

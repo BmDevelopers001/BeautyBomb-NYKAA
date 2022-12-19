@@ -19,7 +19,7 @@ const totalProducts = async()=>{
         let res = await fetch(`http://localhost:8000/products/sellerpd/${slid}`, {
             
             headers:{
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${localStorage.getItem("sltoken")}`
             }
         })
         let result = await res.json()
@@ -93,7 +93,7 @@ let deleteProduct = async(id)=>{
         const response = await fetch(`http://localhost:8000/products/delete/${id}`, {
             method: "DELETE",
             headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${localStorage.getItem("sltoken")}`
             }
         })
         const data = await response.json();
