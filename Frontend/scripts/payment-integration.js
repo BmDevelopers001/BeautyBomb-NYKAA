@@ -1,7 +1,7 @@
 // so i want the quantity of each product in cart and obviosly there id to identity and get them
 let cartData = async () => {
     try {
-       let res= await fetch("http://localhost:8000/cart" , {
+       let res= await fetch("https://frightened-shrug-tuna.cyclic.app/cart" , {
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`
             }
@@ -58,11 +58,12 @@ const productInformation = (arr) => {
   });
 };
 
-console.log(array);
+// console.log(array);
 
 
 document.getElementById("proceed").addEventListener("click", ()=>{
-    fetch("http://localhost:8000/create-checkout-session",{
+  //"http://localhost:8000/create-checkout-session"
+    fetch(`https://sore-rose-catfish-hose.cyclic.app/create-checkout-session`,{
     method:"POST",
     body:JSON.stringify(array),
     headers:{
@@ -70,6 +71,7 @@ document.getElementById("proceed").addEventListener("click", ()=>{
     }
     }).then((res)=> res.json())
     .then((res) => {
+      console.log(res.url)
       window.location.href = res.url
     })
     .catch((err)=>{

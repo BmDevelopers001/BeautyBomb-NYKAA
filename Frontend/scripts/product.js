@@ -223,7 +223,7 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
   getAllProducts();
    async function getAllProducts(){
-      const res  = await fetch("http://localhost:8000/products")
+      const res  = await fetch(`https://sore-rose-catfish-hose.cyclic.app/products`)//("http://localhost:8000/products")
       const data = await res.json();
       // console.log(data.products)
       AppendToProCont(data.products)
@@ -427,7 +427,7 @@ async function addToCart(prod){
   // }
 
   try{
-    let cart_data = await fetch(`http://localhost:8000/cart/productData/${productId}` , {
+    let cart_data = await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart/productData/${productId}` , {
       headers : {
         "authorization": `Bearer ${localStorage.getItem("token")}`
       }
@@ -438,7 +438,8 @@ async function addToCart(prod){
     }
     // console.log(payload)
     try {
-      await fetch("http://localhost:8000/cart/add", {
+      //"http://localhost:8000/cart/add"
+      await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart/add`, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {

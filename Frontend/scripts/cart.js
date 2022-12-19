@@ -38,7 +38,7 @@ coupen_apply.onclick = () => {
 }
 
 let cartData = async () => {
-        await fetch("http://localhost:8000/cart" , {
+        await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart` , {
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`
             }
@@ -166,7 +166,7 @@ function decQty(price, pro_price, qty_box, qtyAdd, qtyLess) {
 
 async function deleteProduct(prod){
     try{
-        await fetch(`http://localhost:8000/cart/delete/${prod._id}` , {
+        await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart/delete/${prod._id}` , {
             method : "DELETE",
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`

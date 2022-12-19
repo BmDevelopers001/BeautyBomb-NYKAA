@@ -32,7 +32,7 @@ async function getUsername(){
     if(token!=null){
 
         try {
-            const url = "http://localhost:8000/user"
+            const url = `https://sore-rose-catfish-hose.cyclic.app/user`
             const res = await fetch(url,{
                 headers:{
                     'Content-type':'application/json',
@@ -428,5 +428,5 @@ function HIDEluxe_Box() {
 let cart_btn = document.getElementById("cart_btn");
 cart_btn.onclick = () => {
     console.log("check");
-    window.location.href = "./view/cart.html"
+    location.href = "./view/cart.html"
 }
