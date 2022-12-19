@@ -25,7 +25,7 @@ try {
     console.log(result)
 
     if(result.token){
-        localStorage.setItem("token",result.token)
+        localStorage.setItem("sltoken",result.token)
         localStorage.setItem("seller", (result.seller))
         localStorage.setItem("sellerid", (result.sellerid))
     }

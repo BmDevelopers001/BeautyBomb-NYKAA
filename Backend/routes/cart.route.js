@@ -21,15 +21,26 @@ cartRouter.get("/" , async (req,res) => {
     }
 })
 
+cartRouter.get("/productData/:productId" , async (req,res) => {
+    const productId = req.params.productId
+    try {
+        let productDetails = await productModel.findOne({ _id: productId })
+        res.send(productDetails)
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 cartRouter.post("/add" , async (req,res) => {
-    const payload = req.body;
+    const payload = req.body.productDetails;
     const userID = req.body.userID
     try{
         let productDetails = await productModel.findOne({_id : payload.productId})
         // res.send(productDetails)
         
         try {
-            await cartModel.create({productDetails , userID});
+            await cartModel.create({productDetails : payload , userID});
             res.send({"msg" : "Product added to cart successfully"})
         }
         catch (err) {

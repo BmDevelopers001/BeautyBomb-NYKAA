@@ -14,7 +14,7 @@ const { response } = require("express");
 paymentRouter.use(express.json())
 paymentRouter.post("/",async(req,res)=>{
 // console.log(req.body)
-console.log(req.body)
+// console.log(req.body)
 
 // STEP-1 IS TO FIND ALL THE ELEMENTS WHICH MATHCES
 try {
@@ -53,8 +53,8 @@ payment_method_types:["card"],
 mode:"payment",
 line_items:array
 ,
-success_url:"https://peaceful-sherbet-34ffd8.netlify.app/",
-cancel_url:"https://peaceful-sherbet-34ffd8.netlify.app/",
+    success_url:"https://peaceful-sherbet-34ffd8.netlify.app/",
+cancel_url:"https://stripe.com/docs/testing#cards",
 billing_address_collection:"required"
 })    
 
