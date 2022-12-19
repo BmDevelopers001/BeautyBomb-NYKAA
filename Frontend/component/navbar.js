@@ -48,7 +48,8 @@ function navbar() {
         </div>
     </div>
     <div>
-        <span class="cart--icon"><i style="font-size:20px" class="fa">&#xf290;</i></span>
+        <span class="cart--icon" id="cart_btn"><i style="font-size:20px" class="fa">&#xf290;</i></span>
+
     </div>
    
     </div>

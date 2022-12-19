@@ -271,7 +271,7 @@ let shoppingBag = document.querySelector(".Shopping-bag-box")
 let chat_ty = document.querySelector(".chatbox")
 let arrowto_UP = document.querySelector(".arrow") 
 function ShowShoppingBag() {
-    shoppingBag.style.display = "block"
+    shoppingBag.style.display = "none"
     chat_ty.style.display = "none"
     arrowto_UP.style.display = "none"
 }
@@ -425,3 +425,8 @@ function HIDEluxe_Box() {
     Luxe_box.style.display = "none"
 }
 
+let cart_btn = document.getElementById("cart_btn");
+cart_btn.onclick = () => {
+    console.log("check");
+    window.location.href = "./view/cart.html"
+}
