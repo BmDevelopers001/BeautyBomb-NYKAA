@@ -53,8 +53,8 @@ payment_method_types:["card"],
 mode:"payment",
 line_items:array
 ,
-success_url:"https://stripe.com/docs/testing#cards",
-cancel_url:"https://stripe.com/docs/testing#cards",
+success_url:"https://peaceful-sherbet-34ffd8.netlify.app/",
+cancel_url:"https://peaceful-sherbet-34ffd8.netlify.app/",
 billing_address_collection:"required"
 })    
 
