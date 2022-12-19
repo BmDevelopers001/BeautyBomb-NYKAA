@@ -217,11 +217,13 @@ display: none;
 .proddes{
 margin-top: 30px;
 margin-left: 7%; 
+/* border: none; */
 }
 #productmaindescription{
 width: 67%;
 height: auto;
-border: 1px solid black;
+/* border: 1px solid black; */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 margin-left: 5%;
 margin-top: 18px;
 background-color: white;

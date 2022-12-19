@@ -250,6 +250,10 @@ data.forEach((prod) => {
 
   let image = document.createElement("img")
   image.src = prod.image[0]
+  // applying on click to every product so that when clicked one product should go to local storage
+image.addEventListener("click",()=>{
+addProdtolocal(prod)
+})
 
   div.onclick = function() {
     GoToProductDetail(prod)
@@ -297,6 +301,7 @@ data.forEach((prod) => {
     addToCart(prod)
   }
 
+
   // cart_btn.onclick = function() {
   //   i++
   //   let index=localStorage.getItem("index")||0
@@ -324,6 +329,10 @@ if(localStorage.getItem("NykaaWish") === null) {
 
 if(localStorage.getItem("NykaaCart") === null) {
   localStorage.setItem("NykaaCart" , JSON.stringify([]))
+}
+
+function addProdtolocal(prod){
+localStorage.setItem("mainProduct",JSON.stringify(prod))
 }
 
 function AddToCartStore(prodct) {
@@ -356,8 +365,8 @@ function GoToProductDetail(proDet) {
   localStorage.setItem("ProductDetail" , JSON.stringify(getProdDet))
 
   setTimeout(() => {
-    window.location.href = "ProductDetail.html"
-  },2500)
+    window.location.href = "mainProductPage.html"
+  },1500)
 
 }
 
