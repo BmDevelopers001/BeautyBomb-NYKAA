@@ -6,7 +6,7 @@ const authenticate = require("../middlewares/seller.auth");
 const productRouter = express.Router();
 const productModel = require("../models/product.model")
 
-productRouter.use(authenticate)
+// productRouter.use(authenticate)
 
 
 productRouter.get("/" , async (req,res) => {

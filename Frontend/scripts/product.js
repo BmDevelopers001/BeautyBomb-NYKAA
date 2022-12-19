@@ -293,14 +293,17 @@ data.forEach((prod) => {
   let cart_btn = document.createElement("button")
   cart_btn.setAttribute("class" , "cart_btn")
   cart_btn.innerText = "ADD TO BAG"
-
-  cart_btn.onclick = function() {
-    i++
-    let index=localStorage.getItem("index")||0
-    localStorage.setItem("index",JSON.stringify(i))
-    AddToCartStore(prod)
-    document.querySelector(".cart--icon").innerHTML=`<i style="font-size:24px" class="fa">&#xf290;</i>${index}`
+  cart_btn.onclick = () => {
+    addToCart(prod)
   }
+
+  // cart_btn.onclick = function() {
+  //   i++
+  //   let index=localStorage.getItem("index")||0
+  //   localStorage.setItem("index",JSON.stringify(i))
+  //   AddToCartStore(prod)
+  //   document.querySelector(".cart--icon").innerHTML=`<i style="font-size:24px" class="fa">&#xf290;</i>${index}`
+  // }
 
   // if(prod.brand == "nykaa cosmetics") {
 
@@ -414,4 +417,44 @@ function fnSORTPOPULARITY() {
   SORTHIGHTOLOW.style.backgroundColor = "#fff"
   SORTLOWTOHIGH.style.backgroundColor = "#fff"
   GETCosNykaaProducts()
+}
+
+async function addToCart(prod){
+  const productId = prod._id
+  // console.log(productId)
+  // const payload = {
+  //   _id : productId
+  // }
+
+  try{
+    let cart_data = await fetch(`http://localhost:8000/cart/productData/${productId}` , {
+      headers : {
+        "authorization": `Bearer ${localStorage.getItem("token")}`
+      }
+    })
+    let finalData = await cart_data.json()
+    const payload = {
+      productDetails : finalData
+    }
+    // console.log(payload)
+    try {
+      await fetch("http://localhost:8000/cart/add", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json",
+          "authorization": `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+        .then((res) => res.json())
+        .then((res) => console.log(res))
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+  catch(err){
+    console.log(err);
+  }
+
 }
