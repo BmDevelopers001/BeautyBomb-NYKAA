@@ -428,5 +428,5 @@ function HIDEluxe_Box() {
 let cart_btn = document.getElementById("cart_btn");
 cart_btn.onclick = () => {
     console.log("check");
-    window.location.href = "./view/cart.html"
+    window.location.href = "../view/cart.html"
 }
