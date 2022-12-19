@@ -19,7 +19,7 @@ console.log(eid);
 const getvalue = async(eid)=>{
     const res = await fetch(`http://localhost:8000/products/productid/${eid}`, {
         headers:{ 
-           Authorization: `Beare ${localStorage.getItem("token")}`
+           Authorization: `Beare ${localStorage.getItem("sltoken")}`
         }
     })
     const result = await res.json()
@@ -63,7 +63,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
             body: JSON.stringify(data),
             headers:{
                 "content-type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${localStorage.getItem("sltoken")}`
             }
         })
 

@@ -1,6 +1,6 @@
 
 let slid = localStorage.getItem("sellerid")
-let token = localStorage.getItem("token")
+let token = localStorage.getItem("sltoken")
 let seller = localStorage.getItem("seller")
 
 if (seller) {
