@@ -223,7 +223,7 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
   getAllProducts();
    async function getAllProducts(){
-      const res  = await fetch(`https://sore-rose-catfish-hose.cyclic.app/products`)//("http://localhost:8000/products")
+      const res  = await fetch("https://frightened-shrug-tuna.cyclic.app/products")
       const data = await res.json();
       // console.log(data.products)
       AppendToProCont(data.products)
@@ -250,6 +250,10 @@ data.forEach((prod) => {
 
   let image = document.createElement("img")
   image.src = prod.image[0]
+  // applying on click to every product so that when clicked one product should go to local storage
+image.addEventListener("click",()=>{
+addProdtolocal(prod)
+})
 
   div.onclick = function() {
     GoToProductDetail(prod)
@@ -297,6 +301,7 @@ data.forEach((prod) => {
     addToCart(prod)
   }
 
+
   // cart_btn.onclick = function() {
   //   i++
   //   let index=localStorage.getItem("index")||0
@@ -324,6 +329,10 @@ if(localStorage.getItem("NykaaWish") === null) {
 
 if(localStorage.getItem("NykaaCart") === null) {
   localStorage.setItem("NykaaCart" , JSON.stringify([]))
+}
+
+function addProdtolocal(prod){
+localStorage.setItem("mainProduct",JSON.stringify(prod))
 }
 
 function AddToCartStore(prodct) {
@@ -356,8 +365,8 @@ function GoToProductDetail(proDet) {
   localStorage.setItem("ProductDetail" , JSON.stringify(getProdDet))
 
   setTimeout(() => {
-    window.location.href = "ProductDetail.html"
-  },2500)
+    window.location.href = "mainProductPage.html"
+  },1500)
 
 }
 
@@ -374,7 +383,7 @@ SORTHIGHTOLOW.addEventListener("click" , fnSORTHIGHTOLOW)
  async function fnSORTHIGHTOLOW() {
 
 
-  let res = await fetch(`http://localhost:5000/api/products`)
+  let res = await fetch(`https://frightened-shrug-tuna.cyclic.app/api/products`)
 
   let data = await res.json()
     
@@ -395,7 +404,7 @@ SORTLOWTOHIGH.addEventListener("click" , fnSORTLOWTOHIGH)
 
 async function fnSORTLOWTOHIGH() {
 
-  let res = await fetch(`http://localhost:5000/api/products`)
+  let res = await fetch(`https://sore-rose-catfish-hose.cyclic.app/api/products`)
 
   let data = await res.json()
     
@@ -438,8 +447,7 @@ async function addToCart(prod){
     }
     // console.log(payload)
     try {
-      //"http://localhost:8000/cart/add"
-      await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart/add`, {
+      await fetch("https://sore-rose-catfish-hose.cyclic.app/cart/add", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {
