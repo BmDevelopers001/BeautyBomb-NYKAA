@@ -108,7 +108,7 @@ function FOOTER() {
                 <li><a href="#">STORE LOCATOR</a></li>
                 <li><a href="#">CANCELLATION & RETURN</a></li>
                 <li><a href="#">SHIPPING & DELIVERY<a></li>
-                <li><a href="../admin/seller.html">SELL ON NYKAA</a></li>
+                <li><a target="_blank" href="https://seller-beautybomb.netlify.app/index.html">SELL ON NYKAA</a></li>
             </ul>
         </div>
         <div class="foo_menu_container">
