@@ -1,4 +1,4 @@
-# Beauty-Bomber
+# Beauty-Bomb
 <H1>Welcome to this repository and we are excited to share our project with you.Have a great look! </H1>
 ---
 
