@@ -2,16 +2,18 @@ const { query } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
 const authenticate = require("../middlewares/seller.auth");
+const { Userauthenticate } = require('../middlewares/user.auth');
 
 const productRouter = express.Router();
 const productModel = require("../models/product.model")
 
-productRouter.use(authenticate)
+productRouter.use(Userauthenticate)
 
 
 productRouter.get("/" , async (req,res) => {
     try{
         let productData = await productModel.find();
+        // console.log(productData);
         res.send({"products":productData})
     }
     catch(err){

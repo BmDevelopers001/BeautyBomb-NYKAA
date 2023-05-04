@@ -234,9 +234,14 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
 getAllProducts();
 async function getAllProducts() {
-  const res = await fetch(`${URL}products`)
+  console.log('Get product');
+  const res = await fetch(`${URL}products`,{
+    headers : {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+    }
+  })
   const data = await res.json();
-  // console.log(data.products)
   AppendToProCont(data.products)
 }
 
@@ -380,7 +385,12 @@ SORTHIGHTOLOW.addEventListener("click", fnSORTHIGHTOLOW)
 
 async function fnSORTHIGHTOLOW() {
 
-  let res = await fetch(`${URL}products`)
+  let res = await fetch(`${URL}products`, {
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+    }
+  })
 
   let data = await res.json()
 
@@ -389,6 +399,7 @@ async function fnSORTHIGHTOLOW() {
     return b.price - a.price
   })
   AppendToProCont(arr)
+  SORTTOPRATED.style.backgroundColor = "#fff"
   SORTPOPULARITY.style.backgroundColor = "#fff"
   SORTHIGHTOLOW.style.backgroundColor = "#fc3a84"
   SORTLOWTOHIGH.style.backgroundColor = "#fff"
@@ -401,7 +412,12 @@ SORTLOWTOHIGH.addEventListener("click", fnSORTLOWTOHIGH)
 
 async function fnSORTLOWTOHIGH() {
 
-  let res = await fetch(`${URL}products`)
+  let res = await fetch(`${URL}products`, {
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+    }
+  })
 
   let data = await res.json()
 
@@ -410,6 +426,7 @@ async function fnSORTLOWTOHIGH() {
     return a.price - b.price
   })
   AppendToProCont(arr)
+  SORTTOPRATED.style.backgroundColor = "#fff"
   SORTPOPULARITY.style.backgroundColor = "#fff"
   SORTHIGHTOLOW.style.backgroundColor = "#fff"
   SORTLOWTOHIGH.style.backgroundColor = "#fc3a84"
@@ -420,7 +437,12 @@ let SORTTOPRATED = document.querySelector(".SORTTOPRATED")
 SORTTOPRATED.addEventListener("click", fnSORTRATING)
 
 async function fnSORTRATING() {
-  let res = await fetch(`${URL}products`)
+  let res = await fetch(`${URL}products`, {
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+    }
+  })
 
   let data = await res.json()
 
@@ -461,7 +483,7 @@ async function addToCart(prod) {
         body: JSON.stringify(payload),
         headers: {
           "Content-type": "application/json",
-          "authorization": `Bearer ${localStorage.getItem("token")}`
+          "authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
         }
       })
         .then((res) => res.json())

@@ -83,7 +83,7 @@
             }
             // console.log(mail)
             try {
-               const url  = "http://localhost:8000/forget" 
+               const url  = "https://beauty-bomb.onrender.com/forget" 
                const res = await fetch(url,{
                 method:'POST',
                 body:JSON.stringify(mail),
@@ -138,7 +138,7 @@
             console.log(detail)
             if(pass===confirmpass){
                 try {
-                    const url = "http://localhost:8000/forget/update"
+                    const url = "https://beauty-bomb.onrender.com/forget/update"
                     const res = await fetch(url,{
                         method:'PATCH',
                         body:JSON.stringify(detail),

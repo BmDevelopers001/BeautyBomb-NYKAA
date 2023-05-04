@@ -37,7 +37,7 @@ async function getUsername(){
             const res = await fetch(url,{
                 headers:{
                     'Content-type':'application/json',
-                    Authorization:`Bearer ${localStorage.getItem("token")}`
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
                 }
             })
             const data = await res.json();

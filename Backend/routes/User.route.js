@@ -7,7 +7,6 @@ const { Userauthenticate } = require("../middlewares/user.auth");
 
 const UserRouter = express.Router();
 
-
 UserRouter.post("/signup",(req,res)=>{
     
     const {email,username,password,phone}  = req.body
@@ -31,6 +30,7 @@ UserRouter.post("/login",async(req,res)=>{
             bcrypt.compare(password,user[0].password,(err,result)=>{
                 if(result){
                     const token = jwt.sign({"userID":user[0]._id}, 'yogi');
+                    // console.log(token);
                     res.send({"msg":"Login Success","token":token})
                 }
                 else{
