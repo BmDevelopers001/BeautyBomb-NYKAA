@@ -43,7 +43,7 @@ document.querySelector("form").addEventListener("submit", async(e)=>{
             body: JSON.stringify(data),
             headers:{
                 "content-type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${localStorage.getItem("sltoken")}`
             }
         })
 

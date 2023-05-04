@@ -2,7 +2,10 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../styles/mainproduct.css">
-<script src="../scripts/mainProductPage.js" defer></script>
+<script src="../scripts/index.js"></script>
+<script src="../scripts/product.js" ></script>
+<script src="../scripts/mainProductPage.js" defer ></script>
+
 <link rel="stylesheet" href="../styles/index.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../node_modules/@splidejs/splide/dist/css/splide.min.css">
@@ -10,8 +13,6 @@
 <script src="../node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <body>
-
-
 
 <div id="topsection">
     <div class="first-bar">
@@ -61,8 +62,8 @@
             </div>
         </div>
         <div>
-<!-- logo problem -->
-
+            <span class="cart--icon" id="cart_btn"><i style="font-size:20px" class="fa">&#xf290;</i></span>
+    
         </div>
        
         </div>
@@ -1598,10 +1599,12 @@
 <div class="vl"></div>
  
 <div id="">
-<h3 id="deliveryheading" style="color: rgba(0,19,37,0.64);"><i class='fas fa-map-marker-alt' style='font-size:24px;'>logo</i>
+<h3 id="deliveryheading" style="color: rgba(0,19,37,0.64);"><i class="fa fa-map-marker" style="font-size:30px"></i></i>
     Delivery Options</h3>
-<input id="address" placeholder="Enter pincode" type="text">
-<button style="height: 45px;width: 70px;left: -10px;position: relative;color:rgb(252, 39, 121) ;">check</button>
+<input id="address"  placeholder="Enter pincode to check delivery time" type="text">
+<button onclick="showModal()" style="height: 45px;width: 70px;left: -10px;position: relative;color:rgb(252, 39, 121) ;">check</button>
+<img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47j6lfcrytqea75iyciz5967r5khgyk2e4uxpncagk&rid=giphy.gif&ct=g" alt="" id="loader">
+<p id="timeChecker">Your Product can be dilevered Within 3-4 bussiness days </p>
 </div>
     
 </div>

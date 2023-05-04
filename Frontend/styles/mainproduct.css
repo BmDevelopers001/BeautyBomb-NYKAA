@@ -117,6 +117,7 @@ background-color: white;
   }
   #product{
     /* border: 1px solid black; */
+   padding-top: 20px;
     width: 60%;
     padding-left:2% ;
     background-color: white;
@@ -177,11 +178,11 @@ color: rgba(0,19,37,0.64);
 }
 .bottomOfprod{
     /* border: 1px solid black; */
-    padding-top: 30px;
+    padding-top: 50px;
 }
 .bottomOfprod1{
     /* border: 1px solid black; */
-    padding-top: 30px;
+    padding-top: 50px;
 }
 .row{
   margin-top: 50px;
@@ -217,11 +218,13 @@ display: none;
 .proddes{
 margin-top: 30px;
 margin-left: 7%; 
+/* border: none; */
 }
 #productmaindescription{
 width: 67%;
 height: auto;
-border: 1px solid black;
+/* border: 1px solid black; */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 margin-left: 5%;
 margin-top: 18px;
 background-color: white;
@@ -230,6 +233,7 @@ text-align: center;
 text-decoration: solid;
 font-size: 20px;
 line-height: 30px;
+border-radius: 10px;
 }
 .splide{
   width: 50%;
@@ -242,3 +246,17 @@ line-height: 30px;
 gap: 200px;
 border: 2px solid black;
 } */
+#timeChecker{
+position: relative;
+margin-top: -40px;
+left: 10px;
+display: none;
+}
+#loader{
+  width: 20%;
+  height: 40%;
+  position: relative;
+  top: -110px;
+  left: 100%;
+  display: none;
+}

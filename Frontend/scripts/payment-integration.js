@@ -60,7 +60,7 @@ const productInformation = (arr) => {
   });
 };
 
-console.log(array);
+// console.log(array);
 
 
 document.getElementById("proceed").addEventListener("click", ()=>{
@@ -72,6 +72,7 @@ document.getElementById("proceed").addEventListener("click", ()=>{
     }
     }).then((res)=> res.json())
     .then((res) => {
+      console.log(res.url)
       window.location.href = res.url
     })
     .catch((err)=>{
