@@ -22,7 +22,7 @@ function navbar() {
 <div class="second-bar">
    
     <ul class="second-navlist">
-      <li> <a href="index.html"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
+      <li> <a href="index.html" id="nykaaIcon"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
        <li><a href="./view/Product.html">CATEGORIES</li></a>
        <li><a href="./view/Product.html" class="show-brandbox">BRANDS</a></li>
        <li><a href="./view/Product.html">LUXE</a></li>

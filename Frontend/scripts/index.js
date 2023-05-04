@@ -1,5 +1,6 @@
 
-import {navbar} from "../component/navbar.js"
+import {navbar} from "../component/navbar.js";
+import { URL } from "../component/url.js";
 
 let nav = document.getElementById("navbar")
 nav.innerHTML = navbar()
@@ -32,7 +33,7 @@ async function getUsername(){
     if(token!=null){
 
         try {
-            const url = "http://localhost:8000/user"
+            const url = `${URL}user`
             const res = await fetch(url,{
                 headers:{
                     'Content-type':'application/json',
@@ -47,7 +48,7 @@ async function getUsername(){
         }
     }
     else{
-        location.reload()
+        // location.reload()
     }
 }
 getUsername();
@@ -428,5 +429,5 @@ function HIDEluxe_Box() {
 let cart_btn = document.getElementById("cart_btn");
 cart_btn.onclick = () => {
     console.log("check");
-    window.location.href = "./view/cart.html"
+    window.location.href = "../Frontend/view/cart.html"
 }

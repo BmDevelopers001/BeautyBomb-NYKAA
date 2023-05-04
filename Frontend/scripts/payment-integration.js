@@ -1,7 +1,9 @@
+import { URL } from "../component/url.js";
+
 // so i want the quantity of each product in cart and obviosly there id to identity and get them
 let cartData = async () => {
     try {
-       let res= await fetch("http://localhost:8000/cart" , {
+      let res = await fetch(`${URL}cart` , {
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`
             }
@@ -62,7 +64,7 @@ console.log(array);
 
 
 document.getElementById("proceed").addEventListener("click", ()=>{
-    fetch("http://localhost:8000/create-checkout-session",{
+    fetch(`${URL}create-checkout-session`,{
     method:"POST",
     body:JSON.stringify(array),
     headers:{

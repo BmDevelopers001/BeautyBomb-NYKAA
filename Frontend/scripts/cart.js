@@ -18,6 +18,8 @@
 // let footerpage = document.querySelector("footer")
 // footerpage.innerHTML = FOOTER()
 
+import { URL } from "../component/url.js";
+
 let cart_div = document.getElementById("cart_div")
 let total_price = document.getElementById("Toatlrupee");
 let cal_total = document.getElementById("cal_total");
@@ -38,7 +40,7 @@ coupen_apply.onclick = () => {
 }
 
 let cartData = async () => {
-        await fetch("http://localhost:8000/cart" , {
+    await fetch(`${URL}cart` , {
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`
             }
@@ -166,7 +168,7 @@ function decQty(price, pro_price, qty_box, qtyAdd, qtyLess) {
 
 async function deleteProduct(prod){
     try{
-        await fetch(`http://localhost:8000/cart/delete/${prod._id}` , {
+        await fetch(`${URL}cart/delete/${prod._id}` , {
             method : "DELETE",
             headers : {
                 authorization : `Bearer ${localStorage.getItem("token")}`
