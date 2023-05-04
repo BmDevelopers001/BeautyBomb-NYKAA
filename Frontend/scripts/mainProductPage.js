@@ -1,3 +1,5 @@
+import { URL } from "../component/url.js"
+
 let obj=JSON.parse(localStorage.getItem("mainProduct"))||[]
 
 
@@ -30,11 +32,11 @@ async function getUsername(){
   if(token!=null){
 
       try {
-          const url = "https://sore-rose-catfish-hose.cyclic.app/user"
+          const url = `${URL}user`
           const res = await fetch(url,{
               headers:{
                   'Content-type':'application/json',
-                  Authorization:`Bearer ${localStorage.getItem("token")}`
+              Authorization: `Bearer ${JSON.parse(localStorage.getItem("token")) }`
               }
           })
           const data = await res.json();
@@ -149,9 +151,9 @@ async function addToCart(prod){
   // }
 
   try{
-    let cart_data = await fetch(`https://sore-rose-catfish-hose.cyclic.app/cart/productData/${productId}` , {
+    let cart_data = await fetch(`${URL}cart/productData/${productId}` , {
       headers : {
-        "authorization": `Bearer ${localStorage.getItem("token")}`
+        "authorization": `Bearer ${JSON.parse(localStorage.getItem("token")) }`
       }
     })
     let finalData = await cart_data.json()
@@ -160,12 +162,12 @@ async function addToCart(prod){
     }
     // console.log(payload)
     try {
-      await fetch("https://sore-rose-catfish-hose.cyclic.app/cart/add", {
+      await fetch(`${URL}cart/add`, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {
           "Content-type": "application/json",
-          "authorization": `Bearer ${localStorage.getItem("token")}`
+          "authorization": `Bearer ${JSON.parse(localStorage.getItem("token")) }`
         }
       })
         .then((res) => res.json())

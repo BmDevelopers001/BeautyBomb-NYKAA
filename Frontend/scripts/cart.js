@@ -42,7 +42,7 @@ coupen_apply.onclick = () => {
 let cartData = async () => {
     await fetch(`${URL}cart` , {
             headers : {
-                authorization : `Bearer ${localStorage.getItem("token")}`
+            authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
             }
         })
         .then((res) => res.json())
@@ -171,7 +171,7 @@ async function deleteProduct(prod){
         await fetch(`${URL}cart/delete/${prod._id}` , {
             method : "DELETE",
             headers : {
-                authorization : `Bearer ${localStorage.getItem("token")}`
+                authorization: `Bearer ${JSON.parse(localStorage.getItem("token")) }`
             }
         })
     }

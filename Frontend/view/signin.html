@@ -301,7 +301,7 @@ async function signUp(e){
         password:password
     }
     try {
-        const url = `http://localhost:8000/user/signup`; //"http://localhost:8000/user/signup"
+        const url = `https://beauty-bomb.onrender.com/user/signup`; //"http://localhost:8000/user/signup"
     const res = await fetch(url,{
         method:'POST',
         body:JSON.stringify(userDetail),
@@ -338,7 +338,7 @@ async function Login(e){
         password:password
     }
     try {
-        const url =   `http://localhost:8000/user/login`;      //"http://localhost:8000/user/login"
+        const url =   `https://beauty-bomb.onrender.com/user/login`;      //"http://localhost:8000/user/login"
      const res = await fetch(url,{
         method:'POST',
         body:JSON.stringify(loginDetail),

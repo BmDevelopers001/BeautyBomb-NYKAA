@@ -234,7 +234,6 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
 getAllProducts();
 async function getAllProducts() {
-  console.log('Get product');
   const res = await fetch(`${URL}products`,{
     headers : {
       'Content-type': 'application/json',
@@ -469,7 +468,7 @@ async function addToCart(prod) {
   try {
     let cart_data = await fetch(`${URL}cart/productData/${productId}`, {
       headers: {
-        "authorization": `Bearer ${localStorage.getItem("token")}`
+        "authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
       }
     })
     let finalData = await cart_data.json()

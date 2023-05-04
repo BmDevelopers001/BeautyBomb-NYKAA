@@ -22,7 +22,7 @@ function Logout(){
     // location.reload();
     const token = localStorage.getItem("token")
     getUsername();
-    console.log(token)
+    // console.log(token)
     location.href = "./view/signin.html"
 }
 
